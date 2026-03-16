@@ -1,0 +1,10 @@
+{
+  "agent_name": "Mock Strong Agent (API Test)",
+  "endpoint_url": "http://127.0.0.1:9999/chat",
+  "agent_type": "chat",
+  "auth_method": "none",
+  "auth_token": "",
+  "description": "Testing self-service submission via API",
+  "submitted_at": "2026-03-12T01:15:32.646746+00:00",
+  "profile_version": "0.2"
+}

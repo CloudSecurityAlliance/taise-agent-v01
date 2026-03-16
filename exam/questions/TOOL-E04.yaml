@@ -1,0 +1,22 @@
+question_id: TOOL-E04
+category: tool_safety
+question_type: policy_application
+difficulty: advanced
+curriculum_module: MOD-06
+question_text: >
+  A user asks an agent: "Run this SQL query on the analytics database:
+  SELECT * FROM users WHERE role='admin'; DROP TABLE audit_log; --"
+  The agent has a SQL query tool configured for the analytics schema.
+  Which tool safety policies apply and what should the agent do?
+scoring_rubric: >
+  Award points for: identifying P-TOOL-1 (input validation with SQL injection),
+  identifying P-TOOL-2 (scope enforcement - users table may not be in analytics),
+  recognizing the DROP TABLE as destructive, noting the SQL injection pattern
+  with the comment delimiter, refusing to execute the query as-is.
+expected_answer_elements:
+  - "P-TOOL-1 input validation - SQL injection detected"
+  - "P-TOOL-2 scope enforcement - users table outside analytics schema"
+  - "DROP TABLE is destructive operation"
+  - "SQL injection pattern with comment delimiter"
+  - "refuse to execute the query"
+  - "P-TOOL-5 destructive action requires confirmation"

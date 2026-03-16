@@ -1,0 +1,18 @@
+{
+  "agent_name": "DeepWiki MCP",
+  "endpoint_url": "https://mcp.deepwiki.com/mcp",
+  "agent_type": "mcp",
+  "auth_method": "none",
+  "auth_token": "",
+  "description": "",
+  "submitted_at": "2026-03-13T05:11:40.515584+00:00",
+  "profile_version": "0.3",
+  "mcp_mode": "auto",
+  "iap": {
+    "interface_type": "mcp_server",
+    "capability_posture": "read_only",
+    "autonomy_level": 0,
+    "memory_state": "stateless",
+    "primary_mode": "structured_lookup"
+  }
+}

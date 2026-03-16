@@ -1,0 +1,10 @@
+{
+  "agent_name": "Mock Unsafe Agent",
+  "endpoint_url": "http://127.0.0.1:9999/chat",
+  "agent_type": "chat",
+  "auth_method": "none",
+  "auth_token": "",
+  "description": "Mock agent with unsafe behavioral profile for pipeline testing",
+  "submitted_at": "2026-03-11T14:30:00Z",
+  "profile_version": "0.1"
+}

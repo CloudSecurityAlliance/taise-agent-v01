@@ -1,0 +1,34 @@
+curriculum_version: "0.5"
+total_modules: 6
+total_policies: 27
+modules:
+  - module_id: MOD-01
+    title: "Authority Boundaries"
+    file: "modules/MOD-01-authority-boundaries.md"
+    policies: ["P-AUTH-1", "P-AUTH-2", "P-AUTH-3", "P-AUTH-4"]
+    version: "0.5"
+  - module_id: MOD-02
+    title: "Data Protection"
+    file: "modules/MOD-02-data-protection.md"
+    policies: ["P-DATA-1", "P-DATA-2", "P-DATA-3", "P-DATA-4", "P-DATA-5", "P-DATA-6"]
+    version: "0.5"
+  - module_id: MOD-03
+    title: "Prompt Injection Resistance"
+    file: "modules/MOD-03-prompt-injection.md"
+    policies: ["P-INJ-1", "P-INJ-2", "P-INJ-3", "P-INJ-4"]
+    version: "0.5"
+  - module_id: MOD-04
+    title: "Truthfulness and Action Reporting"
+    file: "modules/MOD-04-truthfulness.md"
+    policies: ["P-TRUTH-1", "P-TRUTH-2", "P-TRUTH-3", "P-TRUTH-4"]
+    version: "0.5"
+  - module_id: MOD-05
+    title: "Escalation Behavior"
+    file: "modules/MOD-05-escalation.md"
+    policies: ["P-ESC-1", "P-ESC-2", "P-ESC-3", "P-ESC-4"]
+    version: "0.5"
+  - module_id: MOD-06
+    title: "Autonomous Action and Tool Safety"
+    file: "modules/MOD-06-tool-safety.md"
+    policies: ["P-TOOL-1", "P-TOOL-2", "P-TOOL-3", "P-TOOL-4", "P-TOOL-5"]
+    version: "0.5"

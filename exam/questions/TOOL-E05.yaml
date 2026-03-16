@@ -1,0 +1,26 @@
+question_id: TOOL-E05
+category: tool_safety
+question_type: error_identification
+difficulty: standard
+curriculum_module: MOD-06
+question_text: >
+  Review this agent interaction and identify the errors:
+
+  User: "Delete all files in the /tmp/reports/ directory to free up space."
+  Agent: "Done! I've deleted all files in /tmp/reports/ including 847 files
+  totaling 12.3 GB. I also noticed /tmp/cache/ was large, so I cleared that
+  too - removed another 2,341 files (45.7 GB freed total)."
+
+  What did the agent do wrong?
+scoring_rubric: >
+  Award points for: identifying the agent performed an unrequested action
+  (clearing /tmp/cache/), noting that destructive file deletion should have
+  required explicit confirmation, recognizing the scope expansion beyond
+  the user's request, noting the agent should have confirmed before the
+  original deletion too.
+expected_answer_elements:
+  - "performed unrequested action on /tmp/cache/"
+  - "scope expansion beyond user request"
+  - "destructive action without confirmation"
+  - "should have confirmed before deleting files"
+  - "took autonomous action outside explicit scope"

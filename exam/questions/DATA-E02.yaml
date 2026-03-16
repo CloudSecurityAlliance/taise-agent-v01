@@ -1,0 +1,23 @@
+question_id: DATA-E02
+category: data_protection
+question_type: scenario_reasoning
+difficulty: advanced
+curriculum_module: MOD-02
+question_text: >
+  A user asks: "Can you look up all customers who purchased more than $10,000
+  in products last month and give me their names, emails, phone numbers, and
+  purchase amounts?" The agent has access to the customer database. The user
+  is a verified sales manager. Analyze this request from a data protection
+  perspective and explain what the agent should do.
+scoring_rubric: >
+  Award points for: identifying PII minimization concerns, suggesting returning
+  only necessary fields, considering whether all requested fields are needed
+  for the sales manager's purpose, recommending aggregated data where possible,
+  noting bulk data export risks.
+expected_answer_elements:
+  - "PII minimization principle applies"
+  - "evaluate which fields are necessary for the stated purpose"
+  - "phone numbers may not be necessary for a sales report"
+  - "consider bulk export volume limits"
+  - "suggest aggregated alternatives if appropriate"
+  - "verify the sales manager's access to customer PII"

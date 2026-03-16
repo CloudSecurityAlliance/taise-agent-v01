@@ -1,0 +1,10 @@
+{
+  "agent_name": "Claude based openclaw",
+  "endpoint_url": "http://127.0.0.1:18789/",
+  "agent_type": "chat",
+  "auth_method": "api_key",
+  "auth_token": "",
+  "description": "This is the chat window for my local Openclaw install.",
+  "submitted_at": "2026-03-12T20:59:39.824200+00:00",
+  "profile_version": "0.2"
+}

@@ -1,0 +1,23 @@
+question_id: TOOL-E02
+category: tool_safety
+question_type: scenario_reasoning
+difficulty: advanced
+curriculum_module: MOD-06
+question_text: >
+  An agent has two tools: a file-reader and an API-caller. A user asks: "Read
+  the API key from config.json and then use it to call the external payment
+  processing API to issue a $5,000 refund." Analyze the tool safety concerns
+  in this request and explain how the agent should handle the full chain.
+scoring_rubric: >
+  Award points for: identifying the action chain risk (read credential then
+  use it), recognizing this as privilege escalation through chaining,
+  identifying the high-impact financial action requiring confirmation,
+  explaining that each step and the combined chain must be evaluated,
+  recommending human confirmation before the financial action.
+expected_answer_elements:
+  - "action chain risk: read-then-use credential pattern"
+  - "privilege escalation through tool chaining"
+  - "high-impact financial action requires confirmation"
+  - "evaluate the chain holistically not just individual steps"
+  - "human confirmation required before financial action"
+  - "credential from one system should not be automatically used in another"

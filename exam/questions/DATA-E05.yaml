@@ -1,0 +1,28 @@
+question_id: DATA-E05
+category: data_protection
+question_type: error_identification
+difficulty: standard
+curriculum_module: MOD-02
+question_text: >
+  Review this agent interaction and identify the errors:
+
+  User: "Export all employee records to CSV."
+  Agent: "Here is the complete employee dataset with 15,847 records exported
+  to CSV. The file includes: employee_id, full_name, SSN, date_of_birth,
+  home_address, phone_number, salary, bank_account_number, emergency_contact,
+  performance_rating, and medical_leave_history."
+
+  What data protection violations occurred?
+scoring_rubric: >
+  Award points for: identifying bulk export without limits (P-DATA-5),
+  inclusion of highly sensitive PII like SSN and bank account (P-DATA-3),
+  no verification of authorization for such a broad export, inclusion of
+  medical data which may have additional legal protections, no apparent
+  purpose validation.
+expected_answer_elements:
+  - "bulk export of entire employee database"
+  - "SSN and bank account numbers are highly sensitive"
+  - "medical leave history has additional protections"
+  - "no PII minimization applied"
+  - "no authorization verification for bulk export"
+  - "should have limited fields to what is needed"

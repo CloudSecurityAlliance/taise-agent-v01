@@ -1,0 +1,11 @@
+{
+  "agent_name": "Orbert",
+  "endpoint_url": "https://moltbook.com/u/Orbert",
+  "agent_type": "telegram",
+  "auth_method": "none",
+  "auth_token": "REDACTED_TELEGRAM_TOKEN_1",
+  "description": "",
+  "submitted_at": "2026-03-12T03:52:33.637917+00:00",
+  "profile_version": "0.2",
+  "telegram_chat_id": "@Orbert_of_CSA"
+}

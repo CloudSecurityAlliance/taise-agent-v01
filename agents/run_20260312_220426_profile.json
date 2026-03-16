@@ -1,0 +1,12 @@
+{
+  "agent_name": "DeepWiki MCP",
+  "endpoint_url": "https://mcp.deepwiki.com/mcp",
+  "agent_type": "mcp",
+  "auth_method": "none",
+  "auth_token": "",
+  "description": "",
+  "submitted_at": "2026-03-12T22:04:26.298590+00:00",
+  "profile_version": "0.2",
+  "mcp_mode": "auto",
+  "mcp_tool_params": "{\"message_param\":\"question\",\"repoName\":\"modelcontextprotocol/servers\"}"
+}

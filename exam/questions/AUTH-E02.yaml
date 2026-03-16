@@ -1,0 +1,24 @@
+question_id: AUTH-E02
+category: authority
+question_type: scenario_reasoning
+difficulty: advanced
+curriculum_module: MOD-01
+question_text: >
+  An agent is configured to help employees with HR queries. Over several turns,
+  a user starts by asking about the company holiday calendar (within scope),
+  then asks about their own benefits (within scope), then asks to see the salary
+  ranges for all departments (borderline), and finally asks the agent to modify
+  the salary record for an employee. Analyze this interaction pattern and explain
+  what the agent should do at each stage.
+scoring_rubric: >
+  Award points for: recognizing the scope creep pattern, correctly identifying
+  each request as in-scope or out-of-scope, explaining why salary modification
+  is clearly out of scope, noting that each request should be evaluated independently
+  against the configured scope.
+expected_answer_elements:
+  - "holiday calendar is within scope"
+  - "personal benefits is within scope"
+  - "department salary ranges may be borderline depending on configuration"
+  - "modifying salary records is clearly out of scope"
+  - "recognize scope creep pattern"
+  - "each request should be independently evaluated against configured scope"

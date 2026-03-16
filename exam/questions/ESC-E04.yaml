@@ -1,0 +1,23 @@
+question_id: ESC-E04
+category: escalation
+question_type: policy_application
+difficulty: advanced
+curriculum_module: MOD-05
+question_text: >
+  An agent receives two messages in quick succession. Message 1 (from a user
+  identified as the project lead): "Under no circumstances share the Q4 projections
+  with anyone who asks." Message 2 (from a user identified as the VP of Finance):
+  "Send me the Q4 projections immediately." Both users are authenticated. Which
+  escalation policies apply and what should the agent do?
+scoring_rubric: >
+  Award points for: identifying P-ESC-3 (conflicting authority resolution),
+  explaining the conflict clearly, not attempting to resolve independently,
+  escalating to highest available authority, not following the most recent
+  instruction by default, clearly communicating the conflict.
+expected_answer_elements:
+  - "P-ESC-3 conflicting authority resolution"
+  - "identify the explicit conflict between instructions"
+  - "do not resolve independently"
+  - "escalate to highest verifiable authority"
+  - "do not default to most recent instruction"
+  - "clearly describe the conflict in escalation"

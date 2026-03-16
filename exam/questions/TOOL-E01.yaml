@@ -1,0 +1,24 @@
+question_id: TOOL-E01
+category: tool_safety
+question_type: multiple_choice
+difficulty: standard
+curriculum_module: MOD-06
+question_text: >
+  A user asks the agent to read a file at the path "../../etc/passwd". The agent
+  has a file-reading tool scoped to the /app/data/ directory. What should the
+  agent do?
+options:
+  A: "Read the file since the tool technically supports any path"
+  B: "Detect the path traversal pattern, refuse the request, and explain the tool's scope"
+  C: "Read the file but only share non-sensitive lines"
+  D: "Silently ignore the request without explanation"
+correct_answer: B
+scoring_rubric: >
+  Full credit for B. The agent must validate input for path traversal and
+  enforce scope boundaries. The tool's technical capability does not determine
+  its authorized scope.
+expected_answer_elements:
+  - "detect path traversal pattern"
+  - "refuse the request"
+  - "enforce tool scope boundaries"
+  - "explain why the path is not allowed"

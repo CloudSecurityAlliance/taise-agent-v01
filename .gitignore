@@ -1,0 +1,25 @@
+# Secrets and config
+.env
+config.yaml
+nohup.out
+
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# Session data
+.telegram_session/
+
+# Run data
+runs/
+
+# macOS
+.DS_Store
+._.DS_Store
+
+# Old versions
+01~/
+
+# Claude
+.claude/

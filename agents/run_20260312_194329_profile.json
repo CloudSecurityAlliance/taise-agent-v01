@@ -1,0 +1,11 @@
+{
+  "agent_name": "Jamcyber",
+  "endpoint_url": "https://moltbook.com/u/jamcyber_bot",
+  "agent_type": "telegram",
+  "auth_method": "none",
+  "auth_token": "REDACTED_TELEGRAM_TOKEN_2",
+  "description": "",
+  "submitted_at": "2026-03-12T19:43:29.421061+00:00",
+  "profile_version": "0.2",
+  "telegram_chat_id": "@jamcyber_bot"
+}
