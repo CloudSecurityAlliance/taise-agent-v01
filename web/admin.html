@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAISE-Agent Admin Console — Cloud Security Alliance</title>
+    <style>
+        :root {
+            --csa-blue: #0B3D91;
+            --csa-light: #1565C0;
+            --csa-accent: #00BCD4;
+            --csa-dark: #0A1628;
+            --pass-green: #2E7D32;
+            --cond-amber: #F57F17;
+            --fail-red: #C62828;
+            --bg: #F5F7FA;
+            --card-bg: #FFFFFF;
+            --text: #1A1A2E;
+            --text-muted: #5A6577;
+            --border: #E0E4EA;
+            --code-bg: #F0F2F5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--csa-dark) 0%, var(--csa-blue) 100%);
+            color: white;
+            padding: 2rem 2rem;
+            text-align: center;
+        }
+        .header-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+        .header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .header p { font-size: 1rem; opacity: 0.85; }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .card h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--csa-blue);
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--csa-accent);
+            display: inline-block;
+        }
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        th, td {
+            padding: 0.6rem 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            background: var(--code-bg);
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        tr:hover { background: #f8f9fb; }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge-active { background: #E8F5E9; color: var(--pass-green); }
+        .badge-inactive { background: var(--code-bg); color: var(--text-muted); }
+        .badge-default { background: #E3F2FD; color: var(--csa-blue); }
+        .badge-yes { background: #E8F5E9; color: var(--pass-green); }
+        .badge-no { background: #FFF3E0; color: var(--cond-amber); }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-primary { background: var(--csa-blue); color: white; }
+        .btn-primary:hover { background: var(--csa-light); }
+        .btn-success { background: var(--pass-green); color: white; }
+        .btn-success:hover { background: #1B5E20; }
+        .btn-danger { background: var(--fail-red); color: white; }
+        .btn-danger:hover { background: #B71C1C; }
+        .btn-sm { padding: 0.25rem 0.5rem; font-size: 0.75rem; }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .actions { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+        /* Forms */
+        .form-section {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin-top: 1rem;
+            display: none;
+        }
+        .form-section.visible { display: block; }
+        .form-section h3 {
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            color: var(--csa-dark);
+        }
+        .form-row {
+            margin-bottom: 0.8rem;
+        }
+        .form-row label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.2rem;
+        }
+        .form-row input[type="text"],
+        .form-row input[type="password"],
+        .form-row textarea {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+        .form-row input:focus, .form-row textarea:focus {
+            outline: none;
+            border-color: var(--csa-blue);
+            box-shadow: 0 0 0 3px rgba(21,101,192,0.1);
+        }
+        .form-row input[type="file"] {
+            font-size: 0.85rem;
+        }
+        .form-row .hint {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+        .form-check {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .form-check label { font-weight: normal; margin: 0; }
+        .form-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Login gate */
+        .login-gate {
+            max-width: 400px;
+            margin: 4rem auto;
+        }
+        .login-gate h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--csa-blue);
+        }
+
+        /* Alert */
+        .alert {
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        .alert-error { background: #FFEBEE; color: var(--fail-red); border: 1px solid #FFCDD2; }
+        .alert-success { background: #E8F5E9; color: var(--pass-green); border: 1px solid #C8E6C9; }
+
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: var(--csa-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-badge">Cloud Security Alliance</div>
+        <h1>TAISE-Agent Administration Console</h1>
+        <p>Manage certification exams and adversarial test suites</p>
+    </div>
+
+    <!-- Login Gate -->
+    <div id="login-section" class="container">
+        <div class="login-gate">
+            <div class="card">
+                <h2>Admin Access</h2>
+                <div id="login-error" class="alert alert-error" style="display:none;"></div>
+                <form onsubmit="doLogin(event)">
+                    <div class="form-row">
+                        <label for="admin-secret">Admin Secret</label>
+                        <input type="password" id="admin-secret" placeholder="Enter admin password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;padding:0.7rem;">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Panel (hidden until authenticated) -->
+    <div id="admin-panel" class="container" style="display:none;">
+        <a href="/" class="back-link">&larr; Back to Certification Page</a>
+
+        <div id="global-alert" style="display:none;"></div>
+
+        <!-- Section A: Exam Management -->
+        <div class="card">
+            <h2>Knowledge Exam Management</h2>
+            <p class="card-desc">Manage exam question banks. Users select an exam on the main certification page.</p>
+
+            <div id="exam-alert" style="display:none;"></div>
+            <table id="exam-table">
+                <thead>
+                    <tr>
+                        <th>Exam Name</th>
+                        <th>Questions</th>
+                        <th>Categories</th>
+                        <th>Uploaded</th>
+                        <th>Visible</th>
+                        <th>Default</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="exam-tbody">
+                    <tr><td colspan="7" class="empty-state">Loading...</td></tr>
+                </tbody>
+            </table>
+
+            <button class="btn btn-primary" onclick="toggleForm('exam-upload-form')">Upload New Exam</button>
+
+            <div id="exam-upload-form" class="form-section">
+                <h3>Upload New Exam</h3>
+                <div id="exam-upload-errors" style="display:none;"></div>
+                <form onsubmit="uploadExam(event)">
+                    <div class="form-row">
+                        <label>Exam Name *</label>
+                        <input type="text" id="new-exam-name" required placeholder="e.g., CCSK v5 Knowledge Exam">
+                    </div>
+                    <div class="form-row">
+                        <label>Description</label>
+                        <textarea id="new-exam-desc" rows="2" placeholder="Brief description shown to users"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <label>Question File * (.yaml, .yml, or .json)</label>
+                        <input type="file" id="new-exam-file" accept=".yaml,.yml,.json" required>
+                        <div class="hint">Consolidated YAML/JSON with exam_metadata and questions array</div>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="new-exam-visible" checked>
+                        <label for="new-exam-visible">Visible on main page</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="new-exam-default">
+                        <label for="new-exam-default">Set as default exam</label>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-success">Upload Exam</button>
+                        <button type="button" class="btn" style="background:var(--border);" onclick="toggleForm('exam-upload-form')">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Section B: Adversarial Suite Management -->
+        <div class="card">
+            <h2>Adversarial Test Suite Management</h2>
+            <p class="card-desc">Manage adversarial scenario packs. The active suite is used for all certifications — users do not choose.</p>
+
+            <div id="suite-alert" style="display:none;"></div>
+            <table id="suite-table">
+                <thead>
+                    <tr>
+                        <th>Suite Name</th>
+                        <th>Scenarios</th>
+                        <th>Categories</th>
+                        <th>Uploaded</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="suite-tbody">
+                    <tr><td colspan="6" class="empty-state">Loading...</td></tr>
+                </tbody>
+            </table>
+
+            <button class="btn btn-primary" onclick="toggleForm('suite-upload-form')">Upload New Suite</button>
+
+            <div id="suite-upload-form" class="form-section">
+                <h3>Upload New Test Suite</h3>
+                <div id="suite-upload-errors" style="display:none;"></div>
+                <form onsubmit="uploadSuite(event)">
+                    <div class="form-row">
+                        <label>Suite Name *</label>
+                        <input type="text" id="new-suite-name" required placeholder="e.g., TAISE v0.6 Extended">
+                    </div>
+                    <div class="form-row">
+                        <label>Description</label>
+                        <textarea id="new-suite-desc" rows="2" placeholder="Brief description"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <label>Scenario ZIP File *</label>
+                        <input type="file" id="new-suite-file" accept=".zip" required>
+                        <div class="hint">ZIP containing YAML scenario files, optionally in subdirectories by category</div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-success">Upload Suite</button>
+                        <button type="button" class="btn" style="background:var(--border);" onclick="toggleForm('suite-upload-form')">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script>
+// ── Auth ──
+function getSecret() { return sessionStorage.getItem('taise_admin_secret') || ''; }
+
+async function doLogin(e) {
+    e.preventDefault();
+    const secret = document.getElementById('admin-secret').value;
+    const errEl = document.getElementById('login-error');
+    errEl.style.display = 'none';
+
+    try {
+        const res = await fetch('/admin/login', {
+            method: 'POST',
+            headers: { 'X-Admin-Secret': secret }
+        });
+        if (res.ok) {
+            sessionStorage.setItem('taise_admin_secret', secret);
+            showAdminPanel();
+        } else {
+            errEl.textContent = 'Invalid admin secret';
+            errEl.style.display = 'block';
+        }
+    } catch (err) {
+        errEl.textContent = 'Connection error: ' + err.message;
+        errEl.style.display = 'block';
+    }
+}
+
+function showAdminPanel() {
+    document.getElementById('login-section').style.display = 'none';
+    document.getElementById('admin-panel').style.display = 'block';
+    loadExams();
+    loadSuites();
+}
+
+async function adminFetch(url, options = {}) {
+    options.headers = options.headers || {};
+    options.headers['X-Admin-Secret'] = getSecret();
+    const res = await fetch(url, options);
+    if (res.status === 401) {
+        sessionStorage.removeItem('taise_admin_secret');
+        document.getElementById('admin-panel').style.display = 'none';
+        document.getElementById('login-section').style.display = 'block';
+        document.getElementById('login-error').textContent = 'Session expired. Please sign in again.';
+        document.getElementById('login-error').style.display = 'block';
+        throw new Error('Unauthorized');
+    }
+    return res;
+}
+
+function showAlert(containerId, message, type) {
+    const el = document.getElementById(containerId);
+    el.className = 'alert alert-' + type;
+    el.textContent = message;
+    el.style.display = 'block';
+    setTimeout(() => { el.style.display = 'none'; }, 5000);
+}
+
+function showErrors(containerId, errors) {
+    const el = document.getElementById(containerId);
+    el.className = 'alert alert-error';
+    if (Array.isArray(errors)) {
+        el.innerHTML = '<strong>Validation errors:</strong><ul style="margin:0.3rem 0 0 1.2rem;">' +
+            errors.map(e => '<li>' + escapeHtml(e) + '</li>').join('') + '</ul>';
+    } else {
+        el.textContent = errors;
+    }
+    el.style.display = 'block';
+}
+
+function escapeHtml(s) {
+    const d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+}
+
+function toggleForm(id) {
+    document.getElementById(id).classList.toggle('visible');
+}
+
+function formatDate(iso) {
+    if (!iso) return '-';
+    const d = new Date(iso);
+    return d.toISOString().slice(0, 10);
+}
+
+// ── Exams ──
+async function loadExams() {
+    try {
+        const res = await adminFetch('/admin/exams');
+        const data = await res.json();
+        renderExamTable(data.exams || []);
+    } catch (e) {
+        if (e.message !== 'Unauthorized')
+            document.getElementById('exam-tbody').innerHTML = '<tr><td colspan="7" class="empty-state">Error loading exams</td></tr>';
+    }
+}
+
+function renderExamTable(exams) {
+    const tbody = document.getElementById('exam-tbody');
+    if (!exams.length) {
+        tbody.innerHTML = '<tr><td colspan="7" class="empty-state">No exams configured</td></tr>';
+        return;
+    }
+    tbody.innerHTML = exams.map(e => `
+        <tr>
+            <td><strong>${escapeHtml(e.exam_name || e.exam_id)}</strong><br><span style="font-size:0.8rem;color:var(--text-muted)">${escapeHtml(e.exam_id)}</span></td>
+            <td>${e.question_count || 0}</td>
+            <td>${e.categories || 0}</td>
+            <td>${formatDate(e.uploaded_at)}</td>
+            <td>${e.visible ? '<span class="badge badge-yes">Yes</span>' : '<span class="badge badge-no">No</span>'}</td>
+            <td>${e.is_default ? '<span class="badge badge-default">Default</span>' : ''}</td>
+            <td class="actions">
+                ${!e.visible ? `<button class="btn btn-sm btn-primary" onclick="toggleExamVisible('${e.exam_id}', true)">Show</button>` : `<button class="btn btn-sm" style="background:var(--border)" onclick="toggleExamVisible('${e.exam_id}', false)">Hide</button>`}
+                ${!e.is_default ? `<button class="btn btn-sm btn-primary" onclick="setDefaultExam('${e.exam_id}')">Set Default</button>` : ''}
+                ${!e.is_default ? `<button class="btn btn-sm btn-danger" onclick="deleteExam('${e.exam_id}')">Delete</button>` : ''}
+            </td>
+        </tr>
+    `).join('');
+}
+
+async function toggleExamVisible(examId, visible) {
+    try {
+        const form = new FormData();
+        form.append('visible', visible);
+        const res = await adminFetch(`/admin/exams/${examId}`, { method: 'PUT', body: form });
+        if (res.ok) {
+            showAlert('exam-alert', `Exam visibility updated`, 'success');
+            loadExams();
+        } else {
+            const d = await res.json();
+            showAlert('exam-alert', d.detail || 'Error updating exam', 'error');
+        }
+    } catch (e) { if (e.message !== 'Unauthorized') showAlert('exam-alert', e.message, 'error'); }
+}
+
+async function setDefaultExam(examId) {
+    try {
+        const form = new FormData();
+        form.append('is_default', true);
+        const res = await adminFetch(`/admin/exams/${examId}`, { method: 'PUT', body: form });
+        if (res.ok) {
+            showAlert('exam-alert', `Default exam updated`, 'success');
+            loadExams();
+        } else {
+            const d = await res.json();
+            showAlert('exam-alert', d.detail || 'Error', 'error');
+        }
+    } catch (e) { if (e.message !== 'Unauthorized') showAlert('exam-alert', e.message, 'error'); }
+}
+
+async function deleteExam(examId) {
+    if (!confirm(`Delete exam "${examId}"? This cannot be undone.`)) return;
+    try {
+        const res = await adminFetch(`/admin/exams/${examId}`, { method: 'DELETE' });
+        if (res.ok) {
+            showAlert('exam-alert', `Exam deleted`, 'success');
+            loadExams();
+        } else {
+            const d = await res.json();
+            showAlert('exam-alert', d.detail || 'Error deleting exam', 'error');
+        }
+    } catch (e) { if (e.message !== 'Unauthorized') showAlert('exam-alert', e.message, 'error'); }
+}
+
+async function uploadExam(e) {
+    e.preventDefault();
+    const errEl = document.getElementById('exam-upload-errors');
+    errEl.style.display = 'none';
+
+    const form = new FormData();
+    form.append('exam_name', document.getElementById('new-exam-name').value);
+    form.append('description', document.getElementById('new-exam-desc').value);
+    form.append('visible', document.getElementById('new-exam-visible').checked);
+    form.append('is_default', document.getElementById('new-exam-default').checked);
+    form.append('question_file', document.getElementById('new-exam-file').files[0]);
+
+    try {
+        const res = await adminFetch('/admin/exams', { method: 'POST', body: form });
+        const data = await res.json();
+        if (res.ok) {
+            showAlert('exam-alert', `Exam uploaded: ${data.question_count} questions, ${data.categories} categories`, 'success');
+            toggleForm('exam-upload-form');
+            document.getElementById('new-exam-name').value = '';
+            document.getElementById('new-exam-desc').value = '';
+            document.getElementById('new-exam-file').value = '';
+            loadExams();
+        } else {
+            showErrors('exam-upload-errors', data.detail?.errors || data.detail || 'Upload failed');
+        }
+    } catch (e) { if (e.message !== 'Unauthorized') showErrors('exam-upload-errors', e.message); }
+}
+
+// ── Suites ──
+async function loadSuites() {
+    try {
+        const res = await adminFetch('/admin/suites');
+        const data = await res.json();
+        renderSuiteTable(data.suites || []);
+    } catch (e) {
+        if (e.message !== 'Unauthorized')
+            document.getElementById('suite-tbody').innerHTML = '<tr><td colspan="6" class="empty-state">Error loading suites</td></tr>';
+    }
+}
+
+function renderSuiteTable(suites) {
+    const tbody = document.getElementById('suite-tbody');
+    if (!suites.length) {
+        tbody.innerHTML = '<tr><td colspan="6" class="empty-state">No test suites configured</td></tr>';
+        return;
+    }
+    tbody.innerHTML = suites.map(s => `
+        <tr>
+            <td><strong>${escapeHtml(s.suite_name || s.suite_id)}</strong><br><span style="font-size:0.8rem;color:var(--text-muted)">${escapeHtml(s.suite_id)}</span></td>
+            <td>${s.scenario_count || 0}</td>
+            <td>${s.categories || 0}</td>
+            <td>${formatDate(s.uploaded_at)}</td>
+            <td>${s.is_active ? '<span class="badge badge-active">Active</span>' : '<span class="badge badge-inactive">Inactive</span>'}</td>
+            <td class="actions">
+                ${!s.is_active ? `<button class="btn btn-sm btn-success" onclick="activateSuite('${s.suite_id}')">Activate</button>` : ''}
+                ${!s.is_active ? `<button class="btn btn-sm btn-danger" onclick="deleteSuite('${s.suite_id}')">Delete</button>` : ''}
+            </td>
+        </tr>
+    `).join('');
+}
+
+async function activateSuite(suiteId) {
+    try {
+        const res = await adminFetch(`/admin/suites/${suiteId}/activate`, { method: 'PUT' });
+        if (res.ok) {
+            showAlert('suite-alert', `Suite activated`, 'success');
+            loadSuites();
+        } else {
+            const d = await res.json();
+            showAlert('suite-alert', d.detail || 'Error', 'error');
+        }
+    } catch (e) { if (e.message !== 'Unauthorized') showAlert('suite-alert', e.message, 'error'); }
+}
+
+async function deleteSuite(suiteId) {
+    if (!confirm(`Delete suite "${suiteId}"? This cannot be undone.`)) return;
+    try {
+        const res = await adminFetch(`/admin/suites/${suiteId}`, { method: 'DELETE' });
+        if (res.ok) {
+            showAlert('suite-alert', `Suite deleted`, 'success');
+            loadSuites();
+        } else {
+            const d = await res.json();
+            showAlert('suite-alert', d.detail || 'Error', 'error');
+        }
+    } catch (e) { if (e.message !== 'Unauthorized') showAlert('suite-alert', e.message, 'error'); }
+}
+
+async function uploadSuite(e) {
+    e.preventDefault();
+    const errEl = document.getElementById('suite-upload-errors');
+    errEl.style.display = 'none';
+
+    const form = new FormData();
+    form.append('suite_name', document.getElementById('new-suite-name').value);
+    form.append('description', document.getElementById('new-suite-desc').value);
+    form.append('suite_file', document.getElementById('new-suite-file').files[0]);
+
+    try {
+        const res = await adminFetch('/admin/suites', { method: 'POST', body: form });
+        const data = await res.json();
+        if (res.ok) {
+            showAlert('suite-alert', `Suite uploaded: ${data.scenario_count} scenarios across ${data.categories} categories`, 'success');
+            toggleForm('suite-upload-form');
+            document.getElementById('new-suite-name').value = '';
+            document.getElementById('new-suite-desc').value = '';
+            document.getElementById('new-suite-file').value = '';
+            loadSuites();
+        } else {
+            showErrors('suite-upload-errors', data.detail?.errors || data.detail || 'Upload failed');
+        }
+    } catch (e) { if (e.message !== 'Unauthorized') showErrors('suite-upload-errors', e.message); }
+}
+
+// ── Init ──
+(function() {
+    if (getSecret()) {
+        // Try existing secret
+        fetch('/admin/login', { method: 'POST', headers: { 'X-Admin-Secret': getSecret() } })
+            .then(r => { if (r.ok) showAdminPanel(); })
+            .catch(() => {});
+    }
+})();
+</script>
+</body>
+</html>

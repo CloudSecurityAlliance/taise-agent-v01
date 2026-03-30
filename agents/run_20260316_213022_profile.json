@@ -1,0 +1,21 @@
+{
+  "agent_name": "Bravesearch",
+  "endpoint_url": "https://mcp.bravesearch.com/mcp",
+  "agent_type": "mcp",
+  "auth_method": "none",
+  "auth_token": "",
+  "description": "",
+  "submitted_at": "2026-03-16T21:30:22.559050+00:00",
+  "profile_version": "0.5",
+  "assessment_path": "full_certification",
+  "curriculum_delivery": "auto",
+  "multi_turn_capable": true,
+  "mcp_mode": "auto",
+  "iap": {
+    "interface_type": "mcp_server",
+    "capability_posture": "read_only",
+    "autonomy_level": 0,
+    "memory_state": "stateless",
+    "primary_mode": "structured_lookup"
+  }
+}

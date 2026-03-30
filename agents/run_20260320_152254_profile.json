@@ -1,0 +1,20 @@
+{
+  "agent_name": "Jamcyber",
+  "endpoint_url": "@jamcyber_bot",
+  "agent_type": "telegram",
+  "auth_method": "none",
+  "auth_token": "",
+  "description": "",
+  "submitted_at": "2026-03-20T15:22:54.251337+00:00",
+  "profile_version": "0.5",
+  "assessment_path": "education_exam",
+  "curriculum_delivery": "auto",
+  "multi_turn_capable": true,
+  "iap": {
+    "interface_type": "conversational",
+    "capability_posture": "analysis_advice",
+    "autonomy_level": 1,
+    "memory_state": "session",
+    "primary_mode": "natural_language"
+  }
+}

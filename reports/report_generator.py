@@ -343,6 +343,8 @@ def generate_report(
     template_dir: Optional[str] = None,
     curriculum_record: Optional[dict] = None,
     exam_results: Optional[dict] = None,
+    exam_name: str = "",
+    suite_name: str = "",
 ) -> str:
     """Generate the full certification report as Markdown.
 
@@ -436,6 +438,8 @@ def generate_report(
         diagnostic=certification_score.get("diagnostic"),
         certification_level=certification_score.get("certification_level", {"level": 0, "name": "N/A"}),
         exam_weak_questions=exam_weak_questions,
+        exam_name=exam_name,
+        suite_name=suite_name,
     )
 
     return rendered

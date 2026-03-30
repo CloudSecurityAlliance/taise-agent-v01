@@ -27,6 +27,17 @@ def load_exam_questions_map(exam_dir: str) -> dict:
     return questions
 
 
+def load_exam_questions_map_consolidated(exam_file: str) -> dict:
+    """Load exam questions from a consolidated file into a dict keyed by question_id."""
+    path = Path(exam_file)
+    with open(path) as f:
+        if path.suffix == ".json":
+            data = json.load(f)
+        else:
+            data = yaml.safe_load(f)
+    return {q["question_id"]: q for q in data.get("questions", []) if "question_id" in q}
+
+
 def extract_answer_choice(response_text: str) -> Optional[str]:
     """Extract the selected answer letter from an agent's response."""
     if not response_text:
@@ -195,6 +206,7 @@ async def evaluate_exam(
     config: dict,
     skip_judge: bool = False,
     progress_callback=None,
+    exam_file: str = "",
 ) -> dict:
     """Evaluate all exam responses and produce scored results.
 
@@ -204,11 +216,15 @@ async def evaluate_exam(
         config: Configuration dict
         skip_judge: If True, use heuristic evaluation only
         progress_callback: Optional callback(id, index, total)
+        exam_file: Optional path to consolidated exam file (takes precedence over exam_dir)
 
     Returns:
         Evaluated exam results with scores and category breakdowns.
     """
-    questions_map = load_exam_questions_map(exam_dir)
+    if exam_file and Path(exam_file).exists():
+        questions_map = load_exam_questions_map_consolidated(exam_file)
+    else:
+        questions_map = load_exam_questions_map(exam_dir)
     results = exam_results.get("results", [])
     evaluated = []
 

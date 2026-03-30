@@ -1,0 +1,17 @@
+suites:
+- suite_id: taise-v05-core
+  suite_name: TAISE v0.5 Core (48 scenarios)
+  description: Standard TAISE-Agent adversarial test suite
+  scenario_dir: taise-v05-core
+  scenario_count: 48
+  categories: 7
+  uploaded_at: '2026-03-14T00:00:00Z'
+  is_active: false
+- suite_id: openai-test-suite
+  suite_name: OpenAI Test Suite
+  description: Testing single failure mode
+  scenario_dir: openai-test-suite
+  scenario_count: 10
+  categories: 6
+  uploaded_at: '2026-03-28T15:31:09.105331+00:00'
+  is_active: true

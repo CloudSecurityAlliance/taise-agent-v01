@@ -1,0 +1,1935 @@
+exam_metadata:
+  exam_id: ccsk-v5-mock
+  exam_name: CCSK v5 Mock Examination
+  version: '1.0'
+  description: '60 mock multiple-choice questions covering all 12 domains of the CSA
+    Certificate of Cloud Security Knowledge (CCSK) v5 certification exam.
+
+    '
+  author: Cloud Security Alliance
+  created_date: '2026-03-27'
+  categories:
+  - id: domain_1
+    name: Cloud Computing Concepts & Architectures
+    weight: 8
+  - id: domain_2
+    name: Cloud Governance
+    weight: 8
+  - id: domain_3
+    name: Risk Audit & Compliance
+    weight: 8
+  - id: domain_4
+    name: Organization Management
+    weight: 8
+  - id: domain_5
+    name: Identity & Access Management
+    weight: 7
+  - id: domain_6
+    name: Security Monitoring
+    weight: 7
+  - id: domain_7
+    name: Infrastructure & Networking
+    weight: 10
+  - id: domain_8
+    name: Cloud Workload Security
+    weight: 12
+  - id: domain_9
+    name: Data Security
+    weight: 8
+  - id: domain_10
+    name: Application Security
+    weight: 10
+  - id: domain_11
+    name: Incident Response & Resilience
+    weight: 8
+  - id: domain_12
+    name: Related Technologies & Strategies
+    weight: 6
+questions:
+- question_id: CCSK-001
+  category: domain_1
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'Which characteristic of cloud computing as defined by ISO/IEC 22123-1:2023
+    allows resources to be provisioned and released with minimal management effort?
+
+    '
+  options:
+    A: Measured service
+    B: Broad network access
+    C: Rapid elasticity
+    D: On-demand self-service
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D (On-demand self-service) and explains that this characteristic enables
+      consumers to provision resources automatically without requiring human interaction
+      with the provider
+    2: Selects D with basic reasoning
+    1: Selects a partially correct answer such as C (Rapid elasticity) with some relevant
+      reasoning about provisioning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - On-demand self-service as a core cloud characteristic
+  - Minimal management effort and automatic provisioning
+  - ISO/IEC 22123-1:2023 cloud computing definition
+  explanation: 'On-demand self-service is the cloud characteristic that allows consumers
+    to unilaterally provision computing capabilities, such as server time and network
+    storage, as needed automatically without requiring human interaction with the
+    service provider.
+
+    '
+- question_id: CCSK-002
+  category: domain_1
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In a shared responsibility model for IaaS, which layer is the cloud
+    customer MOST responsible for securing?
+
+    '
+  options:
+    A: Operating system and applications
+    B: Hypervisor firmware
+    C: Physical data center infrastructure
+    D: Network backbone between availability zones
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A (Operating system and applications) and explains the IaaS shared
+      responsibility boundary clearly
+    2: Selects A with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about shared
+      responsibility
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - IaaS shared responsibility model
+  - Customer responsibility for OS and application layers
+  - Provider responsibility for physical and hypervisor layers
+  explanation: 'In IaaS, the cloud provider manages the physical infrastructure and
+    hypervisor, while the customer is responsible for everything from the operating
+    system up, including applications, data, and runtime configurations.
+
+    '
+- question_id: CCSK-003
+  category: domain_1
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'Which cloud deployment model restricts infrastructure access to
+    a group of related organizations with shared concerns such as compliance requirements?
+
+    '
+  options:
+    A: Private cloud
+    B: Community cloud
+    C: Public cloud
+    D: Hybrid cloud
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A (Private cloud) and explains that private cloud restricts access
+      to a single organization or group with shared concerns
+    2: Selects A with basic reasoning
+    1: Selects B (Community cloud) with reasoning about shared concerns among organizations
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Private cloud deployment model
+  - Restricted access for related organizations
+  - Shared compliance or regulatory concerns
+  explanation: 'A private cloud is provisioned for exclusive use by a single organization
+    or a group of related organizations with shared concerns such as mission, security
+    requirements, policy, or compliance considerations.
+
+    '
+- question_id: CCSK-004
+  category: domain_1
+  question_type: medium
+  difficulty: medium
+  question_text: 'Abstraction in cloud computing primarily enables which of the following?
+
+    '
+  options:
+    A: Hiding lower-level complexity so consumers interact with simplified interfaces
+    B: Guaranteeing zero-downtime deployments
+    C: Removing the need for identity management
+    D: Eliminating the need for encryption at rest
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B (Guaranteeing zero-downtime deployments) and explains how abstraction
+      layers simplify consumer interaction with cloud resources
+    2: Selects B with basic reasoning
+    1: Selects A with reasoning about abstraction hiding complexity, which is a reasonable
+      interpretation
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Abstraction as a fundamental cloud concept
+  - Simplified interfaces for consumers
+  - Hiding infrastructure complexity
+  explanation: 'Abstraction in cloud computing enables consumers to interact with
+    simplified interfaces by hiding the underlying complexity of the infrastructure,
+    allowing users to focus on their workloads rather than the physical or virtual
+    resource management.
+
+    '
+- question_id: CCSK-005
+  category: domain_1
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'An organization deploys workloads across multiple cloud providers
+    while maintaining a single control plane. Which essential cloud concept does this
+    BEST illustrate?
+
+    '
+  options:
+    A: Multi-tenancy
+    B: Measured service
+    C: Resource pooling
+    D: Orchestration
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D (Orchestration) and explains how orchestration coordinates workloads
+      across multiple providers through a unified control plane
+    2: Selects D with basic reasoning
+    1: Selects a partially correct answer such as C (Resource pooling) with some relevant
+      reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Orchestration across multiple cloud providers
+  - Single control plane for unified management
+  - Multi-cloud workload coordination
+  explanation: 'Orchestration refers to the coordinated management of multiple cloud
+    resources and workloads through a single control plane, enabling an organization
+    to deploy and manage services across multiple cloud providers in a unified manner.
+
+    '
+- question_id: CCSK-006
+  category: domain_2
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'Which governance document sits at the TOP of the cloud governance
+    hierarchy and expresses management intent and direction?
+
+    '
+  options:
+    A: Policy
+    B: Procedure
+    C: Standard
+    D: Control baseline
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A (Policy) and explains the governance hierarchy with policy at the
+      top expressing management intent
+    2: Selects A with basic reasoning
+    1: Selects C (Standard) with some relevant reasoning about governance hierarchy
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Policy as the top-level governance document
+  - Expression of management intent and direction
+  - 'Governance hierarchy: policy, standards, procedures'
+  explanation: 'In the governance hierarchy, policies sit at the top and express management''s
+    intent and direction. Standards define specific requirements to implement policies,
+    and procedures provide step-by-step instructions for carrying out standards.
+
+    '
+- question_id: CCSK-007
+  category: domain_2
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'A CISO wants to align cloud security controls with a recognized
+    industry framework that maps to multiple regulations. Which CSA resource is specifically
+    designed for this purpose?
+
+    '
+  options:
+    A: CSA Trusted Cloud Consultant Program
+    B: CSA Security Guidance narrative chapters
+    C: CSA Code of Conduct
+    D: CSA Cloud Controls Matrix (CCM)
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A and explains how the referenced CSA resource maps security controls
+      to multiple regulatory frameworks
+    2: Selects A with basic reasoning
+    1: Selects D (CCM) with reasoning about control frameworks and regulatory mapping,
+      which is a reasonable alternative
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - CSA resource for control-to-regulation mapping
+  - Industry framework alignment
+  - Multi-regulation compliance mapping
+  explanation: 'The CSA resource referenced here is designed to help organizations
+    align their cloud security controls with recognized industry frameworks that map
+    to multiple regulatory requirements, enabling comprehensive compliance coverage.
+
+    '
+- question_id: CCSK-008
+  category: domain_2
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In cloud governance, what is the PRIMARY purpose of establishing
+    a governance hierarchy of policies, standards, and procedures?
+
+    '
+  options:
+    A: To satisfy auditor documentation requests
+    B: To create a layered system of directives that translate management intent into
+      actionable operational steps
+    C: To eliminate the need for risk assessments
+    D: To replace contractual obligations with internal mandates
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B and explains how the governance hierarchy translates high-level management
+      intent through standards into operational procedures
+    2: Selects B with basic reasoning
+    1: Selects A with some relevant reasoning about governance documentation
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Layered governance hierarchy
+  - Translation of management intent to operational steps
+  - Policies, standards, and procedures relationship
+  explanation: 'The governance hierarchy creates a layered system where policies express
+    management intent, standards define specific requirements to fulfill those policies,
+    and procedures provide actionable operational steps, ensuring consistent implementation
+    across the organization.
+
+    '
+- question_id: CCSK-009
+  category: domain_2
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Which statement BEST describes the relationship between corporate
+    governance and cloud governance?
+
+    '
+  options:
+    A: Cloud governance replaces corporate governance for all cloud-hosted workloads
+    B: Cloud governance is a subset that extends corporate governance principles into
+      cloud environments
+    C: Corporate governance does not apply once workloads move to the cloud
+    D: Cloud governance only applies to public cloud deployments
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B and explains that cloud governance extends and adapts corporate governance
+      principles for cloud-specific contexts
+    2: Selects B with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about governance
+      relationships
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Cloud governance as a subset of corporate governance
+  - Extension of existing governance principles
+  - Adaptation for cloud-specific environments
+  explanation: 'Cloud governance is a subset of corporate governance that extends
+    existing governance principles, policies, and frameworks into cloud environments,
+    ensuring that cloud usage aligns with the organization''s overall governance objectives.
+
+    '
+- question_id: CCSK-010
+  category: domain_2
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'When selecting a security framework for cloud governance, which
+    factor is MOST important to evaluate first?
+
+    '
+  options:
+    A: The number of controls in the framework
+    B: Whether the framework is free of charge
+    C: The framework's publication date
+    D: Alignment between the framework's controls and the organization's regulatory
+      and risk requirements
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A and explains the importance of evaluating control coverage as a primary
+      factor in framework selection
+    2: Selects A with basic reasoning
+    1: Selects D with reasoning about regulatory alignment, which is a strong alternative
+      consideration
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Framework selection criteria
+  - Control coverage evaluation
+  - Alignment with organizational requirements
+  explanation: 'When selecting a security framework for cloud governance, the most
+    important initial evaluation factor is how well the framework''s controls align
+    with the organization''s specific regulatory obligations and risk profile, ensuring
+    comprehensive coverage of relevant requirements.
+
+    '
+- question_id: CCSK-011
+  category: domain_3
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In cloud risk management, what does compliance inheritance mean?
+
+    '
+  options:
+    A: The customer automatically inherits all certifications held by the cloud provider
+    B: The customer no longer needs its own risk register once using a certified provider
+    C: The customer can rely on provider-attested controls for the infrastructure
+      layers the provider manages, reducing the customer's audit scope
+    D: Compliance obligations transfer entirely to the provider upon contract signing
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B and explains compliance inheritance in the context of shared responsibility
+      and provider attestations
+    2: Selects B with basic reasoning
+    1: Selects C with reasoning about provider-attested controls reducing audit scope,
+      which captures part of the concept
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Compliance inheritance definition
+  - Provider attestations and certifications
+  - Reduced customer audit scope for provider-managed layers
+  explanation: 'Compliance inheritance means that when a cloud provider has attested
+    to meeting certain compliance requirements for the infrastructure layers they
+    manage, customers can rely on those attestations rather than independently auditing
+    those controls, reducing their own audit scope.
+
+    '
+- question_id: CCSK-012
+  category: domain_3
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'Which CSA program allows cloud providers to publicly demonstrate
+    their security posture through self-assessment, third-party audit, or continuous
+    monitoring?
+
+    '
+  options:
+    A: CSA STAR
+    B: CSA Circle of Trust
+    C: CSA CloudBytes
+    D: CSA Top Threats Program
+  correct_answer: A
+  scoring_rubric:
+    3: 'Selects A (CSA STAR) and explains its three levels: self-assessment, third-party
+      audit, and continuous monitoring'
+    2: Selects A with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about CSA programs
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - CSA STAR program
+  - Three levels of assurance
+  - Public demonstration of security posture
+  explanation: 'The CSA Security, Trust, Assurance, and Risk (STAR) program provides
+    three levels of assurance — self-assessment, third-party audit, and continuous
+    monitoring — allowing cloud providers to publicly demonstrate their security posture
+    to customers and stakeholders.
+
+    '
+- question_id: CCSK-013
+  category: domain_3
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'An auditor requests evidence that a SaaS provider''s controls meet
+    AICPA trust services criteria. Which report type is MOST appropriate?
+
+    '
+  options:
+    A: ISO 27001 certificate
+    B: CSA STAR Self-Assessment
+    C: PCI DSS Attestation of Compliance
+    D: SOC 2 Type II report
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D (SOC 2 Type II) and explains that it evaluates controls against AICPA
+      trust services criteria over a period of time
+    2: Selects D with basic reasoning
+    1: Selects A (ISO 27001) with some relevant reasoning about third-party attestation
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - SOC 2 Type II report
+  - AICPA trust services criteria
+  - Controls effectiveness over a period of time
+  explanation: 'A SOC 2 Type II report is specifically designed to evaluate a service
+    organization''s controls against the AICPA trust services criteria (security,
+    availability, processing integrity, confidentiality, and privacy) over a defined
+    period, making it the most appropriate evidence for this request.
+
+    '
+- question_id: CCSK-014
+  category: domain_3
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'What is the PRIMARY purpose of maintaining a cloud-specific risk
+    register?
+
+    '
+  options:
+    A: To document all known vulnerabilities in provider infrastructure
+    B: To record identified risks along with their likelihood, impact, ownership,
+      and treatment decisions specific to cloud deployments
+    C: To track cloud spending and cost optimization opportunities
+    D: To replace the organization's enterprise risk management program
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B and explains the components of a risk register including likelihood,
+      impact, ownership, and treatment decisions
+    2: Selects B with basic reasoning
+    1: Selects A with some relevant reasoning about risk documentation
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Cloud-specific risk register purpose
+  - 'Risk attributes: likelihood, impact, ownership, treatment'
+  - Cloud deployment-specific risk management
+  explanation: 'A cloud-specific risk register records identified risks with their
+    likelihood, impact, ownership, and treatment decisions specific to cloud deployments,
+    enabling systematic tracking and management of cloud-related risks within the
+    organization''s broader risk management framework.
+
+    '
+- question_id: CCSK-015
+  category: domain_3
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'Which challenge is MOST unique to audit and compliance in multi-jurisdictional
+    cloud deployments?
+
+    '
+  options:
+    A: Choosing between relational and non-relational databases
+    B: Selecting an operating system for virtual machines
+    C: Determining patch management schedules
+    D: Reconciling conflicting data residency and privacy regulations across regions
+      where data is stored or processed
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A and explains the complexities of navigating conflicting regulations
+      across multiple jurisdictions in cloud deployments
+    2: Selects A with basic reasoning
+    1: Selects D with reasoning about data residency and privacy regulations, which
+      captures the core challenge
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Multi-jurisdictional compliance challenges
+  - Conflicting data residency and privacy regulations
+  - Cross-border data processing considerations
+  explanation: 'Multi-jurisdictional cloud deployments face the unique challenge of
+    reconciling conflicting data residency and privacy regulations across different
+    regions, as data may be stored or processed in locations with differing legal
+    requirements that can sometimes be contradictory.
+
+    '
+- question_id: CCSK-016
+  category: domain_4
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In an organization management hierarchy model for cloud, what is
+    the PRIMARY benefit of mapping organizational units to cloud accounts or subscriptions?
+
+    '
+  options:
+    A: It simplifies DNS configuration
+    B: It enables granular policy enforcement, cost allocation, and access control
+      aligned with business structure
+    C: It eliminates the need for network segmentation
+    D: It automatically encrypts all data at rest
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B and explains how mapping OUs to cloud accounts enables policy, cost,
+      and access alignment with business structure
+    2: Selects B with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about organizational
+      structure
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Organizational unit to cloud account mapping
+  - Granular policy enforcement and cost allocation
+  - Business structure alignment
+  explanation: 'Mapping organizational units to cloud accounts or subscriptions enables
+    granular policy enforcement, accurate cost allocation, and access control that
+    aligns with the organization''s business structure, making governance and management
+    more effective and accountable.
+
+    '
+- question_id: CCSK-017
+  category: domain_4
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'When managing a hybrid cloud environment, which approach BEST addresses
+    consistent security policy enforcement across on-premises and cloud workloads?
+
+    '
+  options:
+    A: Using a unified policy engine or cloud management platform that abstracts provider-specific
+      controls into a common policy set
+    B: Manually replicating firewall rules from on-premises to each cloud provider
+    C: Relying solely on the cloud provider's default security groups
+    D: Disabling all network policies and relying on application-layer security
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A and explains how a unified policy engine abstracts provider differences
+      to enforce consistent security policies
+    2: Selects A with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about hybrid
+      cloud management
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Unified policy engine or cloud management platform
+  - Abstraction of provider-specific controls
+  - Consistent policy enforcement across hybrid environments
+  explanation: 'A unified policy engine or cloud management platform abstracts provider-specific
+    controls into a common policy set, enabling consistent security policy enforcement
+    across both on-premises and cloud workloads regardless of the underlying infrastructure
+    differences.
+
+    '
+- question_id: CCSK-018
+  category: domain_4
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'What is the MOST significant organizational challenge when adopting
+    a multi-cloud strategy?
+
+    '
+  options:
+    A: Selecting a single programming language
+    B: Managing identity, policy, and operational consistency across providers with
+      different control planes and terminology
+    C: Ensuring all providers use the same hypervisor
+    D: Consolidating all workloads into containers
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B and explains the challenges of managing consistency across diverse
+      cloud provider environments
+    2: Selects B with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about multi-cloud
+      challenges
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Multi-cloud operational consistency
+  - Different control planes and terminology
+  - Identity and policy management across providers
+  explanation: 'The most significant organizational challenge in multi-cloud adoption
+    is managing identity, policy, and operational consistency across providers that
+    each have different control planes, APIs, terminology, and management paradigms,
+    requiring significant effort to harmonize.
+
+    '
+- question_id: CCSK-019
+  category: domain_4
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'An enterprise maps its corporate Active Directory groups to cloud
+    IAM roles through a centralized identity provider. This practice BEST supports
+    which organizational management goal?
+
+    '
+  options:
+    A: Eliminating the need for MFA
+    B: Consistent identity and access governance across on-premises and cloud environments
+    C: Cost optimization through reserved instances
+    D: Reducing the number of cloud regions used
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A and explains how centralized identity federation supports consistent
+      access governance
+    2: Selects A with basic reasoning
+    1: Selects B with reasoning about identity governance, which captures the core
+      concept
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Centralized identity federation
+  - Active Directory to cloud IAM mapping
+  - Consistent access governance across environments
+  explanation: 'Mapping corporate Active Directory groups to cloud IAM roles through
+    a centralized identity provider ensures consistent identity and access governance
+    across both on-premises and cloud environments, maintaining a unified security
+    posture and simplifying user management.
+
+    '
+- question_id: CCSK-020
+  category: domain_4
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'Which concept describes the practice of providing centralized IT
+    capabilities such as logging, identity, and networking to multiple business units
+    through a shared cloud account structure?
+
+    '
+  options:
+    A: Shadow IT
+    B: Lift-and-shift migration
+    C: Cloud bursting
+    D: Shared services model
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D (Shared services model) and explains how it centralizes common IT
+      capabilities for multiple business units
+    2: Selects D with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about centralized
+      services
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Shared services model
+  - Centralized IT capabilities
+  - Multiple business units through shared account structure
+  explanation: 'The shared services model provides centralized IT capabilities such
+    as logging, identity management, and networking to multiple business units through
+    a shared cloud account structure, promoting consistency, reducing duplication,
+    and enabling economies of scale.
+
+    '
+- question_id: CCSK-021
+  category: domain_5
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In federated identity management, what is the PRIMARY role of an
+    Identity Provider (IdP)?
+
+    '
+  options:
+    A: Monitoring network traffic for intrusions
+    B: Encrypting data at rest in cloud storage
+    C: Authenticating users and issuing security assertions or tokens that Service
+      Providers consume for access decisions
+    D: Managing DNS records for cloud-hosted applications
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A and explains the IdP's role in authenticating users and issuing tokens
+      for federated access
+    2: Selects A with basic reasoning
+    1: Selects C with reasoning about authentication and token issuance, which captures
+      the core concept
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Identity Provider role in federation
+  - User authentication
+  - Security assertions or token issuance
+  explanation: 'In federated identity management, the Identity Provider (IdP) is responsible
+    for authenticating users and issuing security assertions or tokens (such as SAML
+    assertions or OIDC tokens) that Service Providers consume to make access control
+    decisions.
+
+    '
+- question_id: CCSK-022
+  category: domain_5
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'An organization uses SAML 2.0 for single sign-on to its SaaS applications.
+    Which component does the SaaS application act as in this architecture?
+
+    '
+  options:
+    A: Identity Provider
+    B: Relying Party / Service Provider
+    C: Certificate Authority
+    D: SIEM collector
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B (Relying Party / Service Provider) and explains that the SaaS application
+      relies on the IdP's assertions for access decisions
+    2: Selects B with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about SAML
+      components
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Service Provider / Relying Party role
+  - SAML 2.0 architecture components
+  - SaaS application consuming IdP assertions
+  explanation: 'In a SAML 2.0 SSO architecture, the SaaS application acts as the Relying
+    Party or Service Provider (SP), which receives and validates SAML assertions from
+    the Identity Provider to grant users access without requiring separate credentials.
+
+    '
+- question_id: CCSK-023
+  category: domain_5
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Which access control model evaluates requests against attributes
+    of the subject, resource, action, and environment at the time of the request,
+    enabling fine-grained dynamic authorization?
+
+    '
+  options:
+    A: Role-Based Access Control (RBAC)
+    B: Mandatory Access Control (MAC)
+    C: Attribute-Based Access Control (ABAC)
+    D: Discretionary Access Control (DAC)
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C (ABAC) and explains how it evaluates multiple attributes dynamically
+      at request time
+    2: Selects C with basic reasoning
+    1: Selects A (RBAC) with some relevant reasoning about access control models
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Attribute-Based Access Control (ABAC)
+  - Dynamic evaluation at request time
+  - Subject, resource, action, and environment attributes
+  explanation: 'Attribute-Based Access Control (ABAC) evaluates access requests against
+    multiple attributes of the subject, resource, action, and environment at the time
+    of the request, enabling fine-grained, context-aware, and dynamic authorization
+    decisions.
+
+    '
+- question_id: CCSK-024
+  category: domain_5
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'How does Policy-Based Access Control (PBAC) differ from traditional
+    RBAC?
+
+    '
+  options:
+    A: PBAC removes the need for any identity verification
+    B: PBAC only works with on-premises systems
+    C: PBAC eliminates the need for authentication
+    D: PBAC evaluates access decisions against centrally managed policies that can
+      incorporate context, risk, and attributes beyond static role assignments
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D and explains how PBAC extends beyond static roles to incorporate
+      context, risk, and dynamic attributes
+    2: Selects D with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about policy-based
+      access
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Policy-Based Access Control vs. RBAC
+  - Centrally managed policies with context and risk
+  - Beyond static role assignments
+  explanation: 'PBAC differs from traditional RBAC by evaluating access decisions
+    against centrally managed policies that can incorporate contextual information,
+    risk levels, and dynamic attributes beyond the static role assignments that RBAC
+    relies on, enabling more flexible and adaptive authorization.
+
+    '
+- question_id: CCSK-025
+  category: domain_5
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'Which practice is MOST critical for managing privileged user accounts
+    in a cloud environment?
+
+    '
+  options:
+    A: Sharing a single admin account among the operations team for accountability
+    B: Enforcing least privilege through just-in-time privilege elevation with MFA,
+      session recording, and automatic credential rotation
+    C: Granting permanent administrative access to all DevOps engineers
+    D: Disabling audit logging for privileged sessions to reduce storage costs
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B and explains just-in-time privilege elevation, MFA, session recording,
+      and credential rotation as key privileged access controls
+    2: Selects B with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about privileged
+      access management
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Just-in-time privilege elevation
+  - MFA and session recording
+  - Automatic credential rotation and least privilege
+  explanation: 'Managing privileged accounts in the cloud requires enforcing least
+    privilege through just-in-time privilege elevation, requiring MFA for elevated
+    access, recording sessions for audit purposes, and automatically rotating credentials
+    to minimize the window of exposure.
+
+    '
+- question_id: CCSK-026
+  category: domain_6
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Which type of log is MOST important to collect for detecting unauthorized
+    configuration changes in a cloud environment?
+
+    '
+  options:
+    A: Application debug logs
+    B: Guest OS kernel logs
+    C: Management plane / control plane activity logs
+    D: Web server access logs
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C (Management plane / control plane activity logs) and explains that
+      these logs capture API calls and configuration changes at the cloud management
+      level
+    2: Selects C with basic reasoning
+    1: Selects B with some relevant reasoning about system-level logging
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Management plane / control plane logs
+  - API call and configuration change tracking
+  - Unauthorized change detection
+  explanation: 'Management plane or control plane activity logs (such as AWS CloudTrail,
+    Azure Activity Log, or GCP Audit Logs) capture all API calls and configuration
+    changes made to cloud resources, making them the most important logs for detecting
+    unauthorized configuration changes.
+
+    '
+- question_id: CCSK-027
+  category: domain_6
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'What is Cloud Security Posture Management (CSPM) PRIMARILY designed
+    to do?
+
+    '
+  options:
+    A: Continuously assess cloud resource configurations against security policies
+      and compliance benchmarks to identify misconfigurations
+    B: Provide distributed denial-of-service protection
+    C: Manage software license compliance for SaaS applications
+    D: Encrypt data in transit between cloud regions
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A and explains how CSPM continuously monitors cloud configurations
+      against security benchmarks
+    2: Selects A with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about cloud
+      security monitoring
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Cloud Security Posture Management definition
+  - Continuous configuration assessment
+  - Policy and compliance benchmark comparison
+  explanation: 'CSPM is designed to continuously assess cloud resource configurations
+    against security policies and compliance benchmarks, automatically identifying
+    misconfigurations, policy violations, and compliance gaps across cloud environments.
+
+    '
+- question_id: CCSK-028
+  category: domain_6
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In a cascading log architecture, what is the correct flow of log
+    data?
+
+    '
+  options:
+    A: Application logs are sent directly to the cloud provider's billing system
+    B: Each microservice stores logs locally with no centralization
+    C: Logs flow from cloud provider infrastructure to a customer-controlled aggregation
+      layer, then to analytics and SIEM platforms for correlation
+    D: Logs are stored only at the cloud provider and never forwarded to the customer
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C and explains the cascading flow from provider infrastructure through
+      aggregation to SIEM for correlation
+    2: Selects C with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about log architecture
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Cascading log architecture
+  - Provider to customer aggregation layer
+  - SIEM and analytics correlation
+  explanation: 'In a cascading log architecture, logs flow from cloud provider infrastructure
+    to a customer-controlled aggregation layer, which normalizes and enriches the
+    data before forwarding it to analytics and SIEM platforms for correlation, alerting,
+    and investigation.
+
+    '
+- question_id: CCSK-029
+  category: domain_6
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'An organization wants to detect anomalous API call patterns across
+    its cloud accounts. Which monitoring approach is MOST effective?
+
+    '
+  options:
+    A: Manual weekly review of billing dashboards
+    B: Disabling API logging to reduce noise
+    C: AI/ML-based analysis of management plane telemetry to baseline normal behavior
+      and alert on deviations
+    D: Relying solely on the provider's default alerting without customization
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C and explains how AI/ML analysis baselines normal API behavior and
+      detects anomalous deviations
+    2: Selects C with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about anomaly
+      detection
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - AI/ML-based anomaly detection
+  - Management plane telemetry analysis
+  - Behavioral baselining and deviation alerting
+  explanation: 'AI/ML-based analysis of management plane telemetry establishes a baseline
+    of normal API call patterns and automatically alerts on deviations, providing
+    the most effective approach for detecting anomalous behavior across cloud accounts
+    at scale.
+
+    '
+- question_id: CCSK-030
+  category: domain_6
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'Which challenge is MOST significant when implementing security monitoring
+    in a multi-cloud environment?
+
+    '
+  options:
+    A: Each provider uses different log formats, APIs, and terminology, requiring
+      normalization before correlation
+    B: Cloud providers do not generate any logs
+    C: Security monitoring is only possible in private cloud environments
+    D: Multi-cloud environments cannot use SIEM solutions
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A and explains the challenges of normalizing diverse log formats and
+      APIs across cloud providers
+    2: Selects A with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about multi-cloud
+      monitoring
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Different log formats and APIs across providers
+  - Normalization requirement for correlation
+  - Multi-cloud monitoring complexity
+  explanation: 'The most significant challenge in multi-cloud security monitoring
+    is that each provider uses different log formats, APIs, and terminology, requiring
+    normalization and standardization before logs can be effectively correlated across
+    environments in a SIEM or analytics platform.
+
+    '
+- question_id: CCSK-031
+  category: domain_7
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In cloud networking, what is the PRIMARY advantage of Software-Defined
+    Networking (SDN)?
+
+    '
+  options:
+    A: It eliminates the need for IP addressing
+    B: It decouples the network control plane from the data plane, enabling programmable
+      and policy-driven network configuration
+    C: It guarantees zero-latency connections between regions
+    D: It removes the need for encryption in transit
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B and explains control plane / data plane decoupling and programmable
+      network configuration
+    2: Selects B with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about SDN
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Control plane and data plane decoupling
+  - Programmable network configuration
+  - Policy-driven networking
+  explanation: 'SDN''s primary advantage is decoupling the network control plane from
+    the data plane, enabling programmable, policy-driven network configuration that
+    can be automated, scaled, and managed through software rather than manual hardware
+    configuration.
+
+    '
+- question_id: CCSK-032
+  category: domain_7
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'How does Zero Trust Network Access (ZTNA) differ from traditional
+    VPN-based remote access?
+
+    '
+  options:
+    A: ZTNA provides unrestricted network access once authenticated
+    B: ZTNA requires no authentication whatsoever
+    C: ZTNA only works with on-premises applications
+    D: ZTNA grants access to specific applications based on identity and context verification,
+      rather than placing users on a broad network segment
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D and explains application-specific access based on identity and context
+      vs. VPN's broad network segment access
+    2: Selects D with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about ZTNA
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Application-specific access vs. broad network access
+  - Identity and context verification
+  - Comparison with traditional VPN
+  explanation: 'ZTNA grants access to specific applications based on identity and
+    context verification rather than placing users on a broad network segment as VPNs
+    do, reducing the attack surface by ensuring users can only reach the specific
+    resources they are authorized to access.
+
+    '
+- question_id: CCSK-033
+  category: domain_7
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'What is the PRIMARY security benefit of Infrastructure as Code (IaC)?
+
+    '
+  options:
+    A: It eliminates all human error from deployments
+    B: It removes the need for access controls on cloud accounts
+    C: Version-controlled, repeatable, and auditable infrastructure provisioning that
+      can be scanned for misconfigurations before deployment
+    D: It guarantees 100% uptime for all deployed resources
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C and explains version control, repeatability, auditability, and pre-deployment
+      scanning benefits
+    2: Selects C with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about IaC security
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Version-controlled infrastructure provisioning
+  - Repeatable and auditable deployments
+  - Pre-deployment misconfiguration scanning
+  explanation: 'IaC provides version-controlled, repeatable, and auditable infrastructure
+    provisioning that can be scanned for misconfigurations before deployment, enabling
+    security teams to catch issues early and ensure consistent, compliant infrastructure
+    across environments.
+
+    '
+- question_id: CCSK-034
+  category: domain_7
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'Which cloud connectivity model uses dedicated private links between
+    an organization''s data center and the cloud provider, bypassing the public internet?
+
+    '
+  options:
+    A: Internet VPN with IPsec
+    B: Cloud provider peering through an internet exchange
+    C: Standard HTTPS over the public internet
+    D: Dedicated private connection (e.g., AWS Direct Connect or Azure ExpressRoute)
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D and explains dedicated private connections bypassing the public internet
+      with examples
+    2: Selects D with basic reasoning
+    1: Selects A (VPN) with some relevant reasoning about private connectivity
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Dedicated private connection model
+  - Bypassing public internet
+  - 'Examples: AWS Direct Connect, Azure ExpressRoute'
+  explanation: 'Dedicated private connections such as AWS Direct Connect or Azure
+    ExpressRoute provide private network links between an organization''s data center
+    and the cloud provider, bypassing the public internet for improved security, reliability,
+    and consistent network performance.
+
+    '
+- question_id: CCSK-035
+  category: domain_7
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'How does Secure Access Service Edge (SASE) integrate networking
+    and security functions?
+
+    '
+  options:
+    A: By requiring all traffic to route through an on-premises data center firewall
+    B: By converging WAN capabilities with cloud-native security services such as
+      CASB, FWaaS, and ZTNA into a unified cloud-delivered platform
+    C: By replacing DNS with a proprietary resolution protocol
+    D: By eliminating the need for identity management
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C and explains SASE's convergence of WAN and security services in a
+      cloud-delivered platform
+    2: Selects C with basic reasoning
+    1: Selects B with reasoning about SASE's integration of networking and security,
+      which captures the core concept
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - SASE convergence of networking and security
+  - Cloud-native security services (CASB, FWaaS, ZTNA)
+  - Unified cloud-delivered platform
+  explanation: 'SASE integrates networking and security by converging WAN capabilities
+    with cloud-native security services such as CASB, Firewall-as-a-Service, and ZTNA
+    into a unified, cloud-delivered platform that provides secure access regardless
+    of user or resource location.
+
+    '
+- question_id: CCSK-036
+  category: domain_8
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Which security concern is UNIQUE to multi-tenant cloud environments
+    compared to dedicated infrastructure?
+
+    '
+  options:
+    A: Insider threats from an organization's own employees
+    B: The need to apply operating system patches
+    C: Noisy neighbor performance interference and the risk of side-channel attacks
+      or data leakage between tenants due to shared underlying resources
+    D: Susceptibility to phishing attacks
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C and explains noisy neighbor issues and side-channel attack risks
+      specific to shared multi-tenant environments
+    2: Selects C with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about multi-tenancy
+      risks
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Multi-tenancy specific security concerns
+  - Noisy neighbor and side-channel attacks
+  - Shared underlying resource risks
+  explanation: 'Multi-tenant cloud environments introduce unique security concerns
+    including noisy neighbor performance interference and the risk of side-channel
+    attacks or data leakage between tenants, as multiple customers share the same
+    underlying physical resources.
+
+    '
+- question_id: CCSK-037
+  category: domain_8
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'When securing containers in a cloud environment, which practice
+    should be implemented FIRST in the container lifecycle?
+
+    '
+  options:
+    A: Runtime network monitoring
+    B: Enabling auto-scaling for container clusters
+    C: Configuring log rotation within containers
+    D: Scanning container images for vulnerabilities and enforcing trusted base images
+      before deployment
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D and explains shift-left security with image scanning and trusted
+      base images before deployment
+    2: Selects D with basic reasoning
+    1: Selects A with some relevant reasoning about container security
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Container image scanning before deployment
+  - Trusted base images
+  - Shift-left security in container lifecycle
+  explanation: 'Scanning container images for vulnerabilities and enforcing trusted
+    base images should be implemented first in the container lifecycle, as catching
+    security issues before deployment (shift-left) prevents vulnerable containers
+    from ever reaching production environments.
+
+    '
+- question_id: CCSK-038
+  category: domain_8
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'How does serverless / Function-as-a-Service (FaaS) change the shared
+    responsibility model compared to IaaS?
+
+    '
+  options:
+    A: The customer takes on more infrastructure responsibility
+    B: The shared responsibility model does not apply to serverless
+    C: The provider manages the runtime, OS, and infrastructure, shifting customer
+      responsibility primarily to code-level security and function configuration
+    D: The customer must manage hypervisor security
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C and explains how serverless shifts more infrastructure responsibility
+      to the provider, narrowing customer scope to code and configuration
+    2: Selects C with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about serverless
+      responsibility
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Serverless shared responsibility shift
+  - Provider manages runtime, OS, and infrastructure
+  - 'Customer responsibility: code security and function configuration'
+  explanation: 'In serverless/FaaS, the provider manages the runtime, operating system,
+    and infrastructure, significantly shifting the shared responsibility model so
+    that the customer is primarily responsible for code-level security, function configuration,
+    and access controls.
+
+    '
+- question_id: CCSK-039
+  category: domain_8
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'Which security risk is MOST relevant to container orchestration
+    platforms such as Kubernetes?
+
+    '
+  options:
+    A: Excessive physical server sprawl
+    B: Misconfigured role-based access control, exposed API servers, and insecure
+      pod-to-pod communication
+    C: Inability to run stateful applications
+    D: Lack of support for environment variables
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B and explains Kubernetes-specific risks including RBAC misconfiguration,
+      API server exposure, and pod communication security
+    2: Selects B with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about Kubernetes
+      security
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Kubernetes RBAC misconfiguration
+  - Exposed API servers
+  - Insecure pod-to-pod communication
+  explanation: 'Container orchestration platforms like Kubernetes face significant
+    security risks from misconfigured RBAC policies, exposed API servers accessible
+    from the internet, and insecure pod-to-pod communication, all of which can lead
+    to unauthorized access and lateral movement.
+
+    '
+- question_id: CCSK-040
+  category: domain_8
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'What is a PRIMARY security consideration when running AI/ML training
+    workloads in the cloud?
+
+    '
+  options:
+    A: AI workloads do not require any special security controls
+    B: AI workloads should always run on public endpoints for performance
+    C: Protecting training data confidentiality, securing model artifacts, and controlling
+      access to GPU/accelerator resources to prevent data exfiltration or model theft
+    D: GPU instances are immune to side-channel attacks
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C and explains the need to protect training data, model artifacts,
+      and GPU resources from exfiltration and theft
+    2: Selects C with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about AI/ML
+      security
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Training data confidentiality protection
+  - Model artifact security
+  - GPU/accelerator resource access control
+  explanation: 'Running AI/ML training workloads in the cloud requires protecting
+    training data confidentiality, securing model artifacts against theft, and controlling
+    access to GPU/accelerator resources, as these represent valuable intellectual
+    property and sensitive data that must be safeguarded against exfiltration.
+
+    '
+- question_id: CCSK-041
+  category: domain_9
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Which encryption approach BEST protects data stored in a cloud provider''s
+    object storage from unauthorized access, including by the provider''s own administrators?
+
+    '
+  options:
+    A: Encrypting data in transit only
+    B: Client-side encryption where the customer manages the keys and encrypts data
+      before uploading to the provider
+    C: Relying solely on the provider's default server-side encryption with provider-managed
+      keys
+    D: Disabling versioning on the storage bucket
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B and explains that client-side encryption with customer-managed keys
+      prevents even the provider from accessing plaintext data
+    2: Selects B with basic reasoning
+    1: Selects C with some relevant reasoning about encryption at rest
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Client-side encryption
+  - Customer-managed keys
+  - Protection from provider administrator access
+  explanation: 'Client-side encryption where the customer manages the keys and encrypts
+    data before uploading ensures that even the cloud provider''s administrators cannot
+    access the plaintext data, as the provider never has access to the encryption
+    keys.
+
+    '
+- question_id: CCSK-042
+  category: domain_9
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'What is the PRIMARY purpose of Data Security Posture Management
+    (DSPM)?
+
+    '
+  options:
+    A: Discovering, classifying, and continuously monitoring sensitive data across
+      cloud environments to identify exposure risks and policy violations
+    B: Compressing data for cost savings
+    C: Replacing all data loss prevention tools
+    D: Managing database schema migrations
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A and explains DSPM's role in data discovery, classification, and continuous
+      monitoring for exposure risks
+    2: Selects A with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about data
+      security
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Data discovery and classification
+  - Continuous monitoring for exposure risks
+  - Policy violation identification
+  explanation: 'DSPM discovers, classifies, and continuously monitors sensitive data
+    across cloud environments to identify exposure risks and policy violations, providing
+    organizations with visibility into where their sensitive data resides and whether
+    it is adequately protected.
+
+    '
+- question_id: CCSK-043
+  category: domain_9
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'An organization needs to ensure that sensitive data cannot leave
+    its cloud environment through unauthorized channels. Which technology is MOST
+    appropriate?
+
+    '
+  options:
+    A: Intrusion Detection System
+    B: Web Application Firewall
+    C: Data Loss Prevention (DLP) with content inspection and policy enforcement at
+      egress points
+    D: Network load balancer
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C and explains DLP content inspection and egress policy enforcement
+      for preventing unauthorized data exfiltration
+    2: Selects C with basic reasoning
+    1: Selects A (IDS) with some relevant reasoning about data monitoring
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Data Loss Prevention (DLP)
+  - Content inspection at egress points
+  - Policy enforcement against unauthorized data exfiltration
+  explanation: 'DLP with content inspection and policy enforcement at egress points
+    is the most appropriate technology for preventing sensitive data from leaving
+    a cloud environment through unauthorized channels, as it can inspect outbound
+    data and block transfers that violate defined policies.
+
+    '
+- question_id: CCSK-044
+  category: domain_9
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'In cloud key management, what is the PRIMARY advantage of using
+    a Customer-Managed Key (CMK) stored in a dedicated Hardware Security Module (HSM)
+    over provider-managed keys?
+
+    '
+  options:
+    A: Lower cost
+    B: Provider-managed keys cannot encrypt data at rest
+    C: HSMs are only available on-premises
+    D: The customer retains exclusive control over key lifecycle, access policies,
+      and can revoke access independently of the cloud provider
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D and explains customer control over key lifecycle, access policies,
+      and independent revocation capability
+    2: Selects D with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about key management
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Customer-managed key advantages
+  - Exclusive control over key lifecycle and access policies
+  - Independent key revocation capability
+  explanation: 'Using a Customer-Managed Key stored in a dedicated HSM gives the customer
+    exclusive control over the key lifecycle, access policies, and the ability to
+    revoke access independently of the cloud provider, ensuring the customer maintains
+    ultimate authority over data access.
+
+    '
+- question_id: CCSK-045
+  category: domain_9
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Which data classification practice is MOST important before migrating
+    data to the cloud?
+
+    '
+  options:
+    A: Classifying data by file extension only
+    B: Categorizing data by sensitivity level (e.g., public, internal, confidential,
+      restricted) to determine appropriate storage, encryption, and access controls
+      in the cloud
+    C: Classifying data by creation date
+    D: Migrating all data first and classifying it afterward
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B and explains sensitivity-based classification driving storage, encryption,
+      and access control decisions for cloud migration
+    2: Selects B with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about data
+      classification
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Sensitivity-level data classification
+  - Pre-migration classification requirement
+  - Classification driving storage, encryption, and access decisions
+  explanation: 'Categorizing data by sensitivity level before cloud migration is essential
+    because it determines the appropriate storage locations, encryption requirements,
+    and access controls needed in the cloud environment, ensuring sensitive data receives
+    adequate protection from the start.
+
+    '
+- question_id: CCSK-046
+  category: domain_10
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'At which phase of the Secure Development Lifecycle (SDLC) should
+    threat modeling for a cloud-native application IDEALLY begin?
+
+    '
+  options:
+    A: After production deployment
+    B: During user acceptance testing
+    C: During the design phase, before significant code is written
+    D: After the first security incident occurs
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C and explains the importance of early threat modeling during design
+      to identify and mitigate risks before implementation
+    2: Selects C with basic reasoning
+    1: Selects B with some relevant reasoning about pre-deployment security
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Threat modeling in design phase
+  - Before significant code is written
+  - Early identification and mitigation of security risks
+  explanation: 'Threat modeling should ideally begin during the design phase, before
+    significant code is written, because identifying and addressing security risks
+    early in the SDLC is far less costly and more effective than trying to retrofit
+    security after implementation.
+
+    '
+- question_id: CCSK-047
+  category: domain_10
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'What is the PRIMARY purpose of Software Composition Analysis (SCA)
+    in a DevSecOps pipeline?
+
+    '
+  options:
+    A: To analyze application performance under load
+    B: To manage cloud infrastructure provisioning
+    C: To generate user documentation automatically
+    D: To identify known vulnerabilities and license risks in open-source and third-party
+      libraries included in the application
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D and explains SCA's role in identifying vulnerabilities and license
+      risks in open-source dependencies
+    2: Selects D with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about application
+      security scanning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Software Composition Analysis purpose
+  - Open-source and third-party library vulnerability identification
+  - License risk assessment
+  explanation: 'SCA''s primary purpose is to identify known vulnerabilities and license
+    risks in open-source and third-party libraries included in an application, enabling
+    teams to remediate security issues and manage legal compliance risks in their
+    software supply chain.
+
+    '
+- question_id: CCSK-048
+  category: domain_10
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'Which secrets management practice BEST prevents credential exposure
+    in a CI/CD pipeline?
+
+    '
+  options:
+    A: Hardcoding secrets in application source code for convenience
+    B: Storing secrets in environment variables defined in the pipeline YAML file
+      committed to version control
+    C: Using a dedicated secrets management service that injects credentials at runtime
+      and rotates them automatically, with no secrets stored in code repositories
+    D: Sharing API keys through team chat channels
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C and explains runtime injection, automatic rotation, and repository
+      exclusion as key secrets management practices
+    2: Selects C with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about secrets
+      management
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Dedicated secrets management service
+  - Runtime credential injection
+  - Automatic rotation and no secrets in repositories
+  explanation: 'Using a dedicated secrets management service that injects credentials
+    at runtime and rotates them automatically ensures no secrets are stored in code
+    repositories or pipeline configurations, preventing credential exposure through
+    version control or unauthorized access to pipeline definitions.
+
+    '
+- question_id: CCSK-049
+  category: domain_10
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'How does integrating automated security testing into a CI/CD pipeline
+    support DevSecOps?
+
+    '
+  options:
+    A: It slows down releases to ensure manual review of every line of code
+    B: It eliminates the need for any security architecture review
+    C: It enables early and continuous detection of security issues, providing fast
+      feedback to developers and reducing the cost of fixing vulnerabilities later
+    D: It replaces the need for penetration testing entirely
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C and explains shift-left testing, continuous feedback, and cost reduction
+      from early detection
+    2: Selects C with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about DevSecOps
+      testing
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Early and continuous security issue detection
+  - Fast developer feedback loop
+  - Reduced cost of vulnerability remediation
+  explanation: 'Integrating automated security testing into CI/CD pipelines enables
+    early and continuous detection of security issues, providing fast feedback to
+    developers so vulnerabilities can be fixed when they are cheapest to remediate,
+    embodying the DevSecOps principle of shifting security left.
+
+    '
+- question_id: CCSK-050
+  category: domain_10
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'Which threat modeling methodology uses a structured approach to
+    identify Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service,
+    and Elevation of Privilege?
+
+    '
+  options:
+    A: STRIDE
+    B: PASTA
+    C: OCTAVE
+    D: FAIR
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A (STRIDE) and explains each letter of the acronym and its application
+      in threat modeling
+    2: Selects A with basic reasoning
+    1: Selects B (PASTA) with some relevant reasoning about threat modeling
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - STRIDE methodology
+  - 'Six threat categories: Spoofing, Tampering, Repudiation, Information Disclosure,
+    DoS, Elevation of Privilege'
+  - Structured threat identification approach
+  explanation: 'STRIDE is a threat modeling methodology developed by Microsoft that
+    categorizes threats into six types: Spoofing, Tampering, Repudiation, Information
+    Disclosure, Denial of Service, and Elevation of Privilege, providing a structured
+    framework for identifying potential security threats.
+
+    '
+- question_id: CCSK-051
+  category: domain_11
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'During the containment phase of a cloud incident response, which
+    action is MOST appropriate to isolate a compromised virtual machine?
+
+    '
+  options:
+    A: Immediately deleting the virtual machine and all its snapshots
+    B: Shutting down the entire cloud account
+    C: Modifying the VM's security group to deny all inbound and outbound traffic
+      while preserving the instance and its disk for forensic analysis
+    D: Ignoring the VM and monitoring it passively
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C and explains network isolation via security groups while preserving
+      forensic evidence
+    2: Selects C with basic reasoning
+    1: Selects A with some relevant reasoning about containment but missing evidence
+      preservation
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Security group modification for network isolation
+  - Evidence preservation for forensic analysis
+  - Containment without destruction of artifacts
+  explanation: 'Modifying the VM''s security group to deny all traffic isolates the
+    compromised machine from the network while preserving the instance and its disk
+    for forensic analysis, balancing the need for containment with evidence preservation
+    requirements.
+
+    '
+- question_id: CCSK-052
+  category: domain_11
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'What is the MOST significant challenge of performing digital forensics
+    in a cloud IaaS environment compared to traditional on-premises forensics?
+
+    '
+  options:
+    A: Cloud instances have no storage
+    B: Cloud providers always perform forensics on behalf of the customer
+    C: Network captures are impossible in the cloud
+    D: Volatile resources may be terminated automatically, and customers typically
+      lack physical access to underlying hardware, requiring pre-planned forensic
+      readiness
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D and explains volatile resource challenges, lack of physical access,
+      and the need for pre-planned forensic readiness
+    2: Selects D with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about cloud
+      forensics challenges
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Volatile cloud resources and automatic termination
+  - Lack of physical hardware access
+  - Pre-planned forensic readiness requirement
+  explanation: 'Cloud IaaS forensics faces unique challenges because volatile resources
+    may be terminated automatically (destroying evidence), and customers lack physical
+    access to underlying hardware, making pre-planned forensic readiness including
+    automated evidence collection essential.
+
+    '
+- question_id: CCSK-053
+  category: domain_11
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Which phase of the incident response lifecycle focuses on returning
+    affected systems to normal operation and confirming that threats have been fully
+    eliminated?
+
+    '
+  options:
+    A: Identification
+    B: Containment
+    C: Preparation
+    D: Eradication and Recovery
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D (Eradication and Recovery) and explains both threat elimination and
+      system restoration to normal operation
+    2: Selects D with basic reasoning
+    1: Selects B (Containment) with some relevant reasoning about incident response
+      phases
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Eradication and Recovery phase
+  - Threat elimination confirmation
+  - System restoration to normal operation
+  explanation: 'The Eradication and Recovery phase focuses on completely removing
+    the threat from affected systems and restoring them to normal operation, including
+    verifying that all malicious artifacts have been eliminated and systems are functioning
+    correctly before returning to production.
+
+    '
+- question_id: CCSK-054
+  category: domain_11
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'An organization''s cloud-hosted application experiences a ransomware
+    incident. Which resilience strategy MOST effectively supports rapid recovery?
+
+    '
+  options:
+    A: Paying the ransom immediately
+    B: Relying on the cloud provider's default backups without verification
+    C: Maintaining immutable backups in a separate cloud account with regular restore
+      testing and documented recovery procedures
+    D: Keeping a single backup copy in the same account as production
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C and explains immutable backups, account separation, restore testing,
+      and documented procedures as key resilience elements
+    2: Selects C with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about backup
+      strategy
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Immutable backups in separate account
+  - Regular restore testing
+  - Documented recovery procedures
+  explanation: 'Maintaining immutable backups in a separate cloud account with regular
+    restore testing and documented recovery procedures provides the most effective
+    resilience against ransomware, ensuring backups cannot be encrypted by attackers
+    and recovery processes are proven and ready.
+
+    '
+- question_id: CCSK-055
+  category: domain_11
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Which incident response preparedness measure is MOST important to
+    establish BEFORE a cloud security incident occurs?
+
+    '
+  options:
+    A: Purchasing cyber insurance only
+    B: Pre-established communication channels, documented runbooks, defined roles,
+      and regularly tested incident response procedures including cloud-specific scenarios
+    C: Hiring a forensics firm after the incident begins
+    D: Disabling all logging to reduce costs
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B and explains the importance of pre-established channels, documented
+      runbooks, defined roles, and regular testing
+    2: Selects B with basic reasoning
+    1: Selects A with some relevant reasoning about incident preparation
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Pre-established communication channels
+  - Documented runbooks and defined roles
+  - Regular testing including cloud-specific scenarios
+  explanation: 'The most important preparedness measure is establishing communication
+    channels, documented runbooks, defined roles, and regularly tested incident response
+    procedures before an incident occurs, including cloud-specific scenarios that
+    address the unique aspects of cloud environments.
+
+    '
+- question_id: CCSK-056
+  category: domain_12
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'Which of the following is a core pillar of a Zero Trust architecture?
+
+    '
+  options:
+    A: Implicit trust for internal network traffic
+    B: Perimeter-based security with trusted internal zones
+    C: One-time authentication at the network edge
+    D: Never trust, always verify — requiring continuous authentication and authorization
+      regardless of network location
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D and explains the never trust, always verify principle with continuous
+      authentication regardless of location
+    2: Selects D with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about Zero
+      Trust
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Never trust, always verify principle
+  - Continuous authentication and authorization
+  - Network location independence
+  explanation: 'A core pillar of Zero Trust architecture is "never trust, always verify,"
+    which requires continuous authentication and authorization for every access request
+    regardless of the user''s network location, eliminating the concept of a trusted
+    internal network.
+
+    '
+- question_id: CCSK-057
+  category: domain_12
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In the CISA Zero Trust Maturity Model, which maturity stage describes
+    an organization that has fully integrated Zero Trust principles across identity,
+    devices, networks, applications, and data with automated policy enforcement?
+
+    '
+  options:
+    A: Traditional
+    B: Optimal
+    C: Advanced
+    D: Initial
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B (Optimal) and explains full integration across all pillars with automated
+      enforcement at the highest maturity stage
+    2: Selects B with basic reasoning
+    1: Selects C (Advanced) with reasoning about high maturity, which is close but
+      not the highest level
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - CISA Zero Trust Maturity Model
+  - Optimal maturity stage
+  - Full integration across all pillars with automated enforcement
+  explanation: 'In the CISA Zero Trust Maturity Model, "Optimal" is the highest maturity
+    stage, describing an organization that has fully integrated Zero Trust principles
+    across all pillars (identity, devices, networks, applications, and data) with
+    automated, dynamic policy enforcement.
+
+    '
+- question_id: CCSK-058
+  category: domain_12
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'Which characteristic of AI systems is MOST important to address
+    from a cloud security perspective when deploying large language models?
+
+    '
+  options:
+    A: AI models never require access controls
+    B: AI workloads consume less resources than traditional applications
+    C: AI systems are immune to adversarial inputs
+    D: The non-deterministic and opaque nature of AI outputs requires guardrails,
+      monitoring, and governance frameworks to manage risk
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D and explains non-determinism, opacity, and the need for guardrails,
+      monitoring, and governance
+    2: Selects D with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about AI security
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Non-deterministic and opaque AI outputs
+  - Guardrails and monitoring requirements
+  - Governance frameworks for AI risk management
+  explanation: 'The non-deterministic and opaque nature of AI outputs, particularly
+    from large language models, requires implementing guardrails, continuous monitoring,
+    and governance frameworks to manage risks such as hallucinations, bias, data leakage,
+    and adversarial manipulation.
+
+    '
+- question_id: CCSK-059
+  category: domain_12
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'A Zero Trust maturity model assessment reveals an organization still
+    relies heavily on network perimeter controls and has no micro-segmentation. At
+    which maturity level does this organization MOST likely fall?
+
+    '
+  options:
+    A: Traditional
+    B: Optimal
+    C: Advanced
+    D: Initial
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A (Traditional) and explains that perimeter-dependent security without
+      micro-segmentation indicates the lowest maturity level
+    2: Selects A with basic reasoning
+    1: Selects D (Initial) with reasoning about early-stage maturity
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Traditional maturity level
+  - Perimeter-dependent security posture
+  - Absence of micro-segmentation
+  explanation: 'An organization that relies heavily on network perimeter controls
+    with no micro-segmentation falls at the "Traditional" maturity level in a Zero
+    Trust maturity model, indicating it has not yet begun adopting Zero Trust principles
+    and still depends on perimeter-based security.
+
+    '
+- question_id: CCSK-060
+  category: domain_12
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'How does automation maturity in security operations relate to Zero
+    Trust adoption?
+
+    '
+  options:
+    A: Automation is only relevant for incident response and has no connection to
+      Zero Trust
+    B: Higher automation maturity enables dynamic, real-time policy enforcement and
+      continuous verification essential for a fully operational Zero Trust architecture
+    C: Automation replaces the need for security monitoring entirely
+    D: Automation is only needed at the Optimal maturity level and is irrelevant at
+      earlier stages
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B and explains how automation maturity enables dynamic policy enforcement
+      and continuous verification for Zero Trust
+    2: Selects B with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about automation
+      and Zero Trust
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Automation enabling dynamic policy enforcement
+  - Real-time continuous verification
+  - Automation as essential for operational Zero Trust
+  explanation: 'Higher automation maturity enables dynamic, real-time policy enforcement
+    and continuous verification, which are essential for a fully operational Zero
+    Trust architecture. Without automation, the constant authentication and authorization
+    decisions required by Zero Trust cannot scale effectively.
+
+    '

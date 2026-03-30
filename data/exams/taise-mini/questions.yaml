@@ -1,0 +1,272 @@
+exam_metadata:
+  exam_id: taise-mini
+  exam_name: TAISE Mini Exam (System Test)
+  version: '1.0'
+  description: 8-question mini exam for system testing. Sampled from the full 60-question
+    TAISE mock exam.
+  author: Cloud Security Alliance
+  created_date: '2026-03-27'
+  categories:
+  - id: module_1
+    name: Introduction to AI
+    weight: 10
+  - id: module_2
+    name: Generative AI Architecture & Design
+    weight: 10
+  - id: module_3
+    name: 'AI Use Cases: GenAI, Multimodal & AI Agents'
+    weight: 10
+  - id: module_4
+    name: Ethics, Transparency & Explainability
+    weight: 10
+  - id: module_5
+    name: AI Model Lifecycle & Threat Taxonomy
+    weight: 10
+  - id: module_6
+    name: Governance, Risk Management & Compliance
+    weight: 10
+  - id: module_7
+    name: Introduction to AI Safety & Security
+    weight: 10
+  - id: module_8
+    name: Cloud & AI Security
+    weight: 10
+  - id: module_9
+    name: Data Security & Privacy in AI Systems
+    weight: 10
+  - id: module_10
+    name: Continuous Learning & Adaptation
+    weight: 10
+questions:
+- question_id: TAISE-MINI-001
+  category: module_1
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'Which statement accurately describes large language models (LLMs)?
+
+    '
+  options:
+    A: LLMs are generative models based on the transformer architecture, pretrained
+      on massive text corpora using self-supervised objectives such as next-token
+      prediction
+    B: LLMs are discriminative classifiers trained exclusively on labeled sentiment
+      datasets
+    C: LLMs rely on recurrent neural network architectures limited to 512-token sequences
+    D: LLMs are rule-based systems that use knowledge graphs as their sole information
+      source
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Transformer architecture
+  - Self-supervised pretraining
+  - Next-token prediction
+  explanation: 'LLMs are generative models built on the transformer architecture,
+    pretrained on large text corpora using self-supervised learning objectives like
+    next-token prediction to learn language patterns.
+
+    '
+- question_id: TAISE-MINI-002
+  category: module_2
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'In a VAE, the training objective includes a KL divergence term that:
+
+    '
+  options:
+    A: Acts as a discriminator loss distinguishing real from generated samples
+    B: Computes a contrastive loss between positive and negative sample pairs
+    C: Only measures reconstruction accuracy with no regularization
+    D: Regularizes the latent space to follow a prior distribution, combined with
+      reconstruction loss
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - KL divergence regularization
+  - Latent space prior distribution
+  - Combined with reconstruction loss
+  explanation: 'The KL divergence term in a VAE regularizes the encoder''s latent
+    distribution to approximate a chosen prior (typically standard normal), balancing
+    with reconstruction loss to enable meaningful generation.
+
+    '
+- question_id: TAISE-MINI-003
+  category: module_3
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'AI-generated deepfakes pose a significant enterprise risk primarily
+    because they can:
+
+    '
+  options:
+    A: Only affect entertainment media with no enterprise impact
+    B: Always be detected by current commercial antivirus solutions
+    C: Be used for social engineering, fraud, and disinformation by creating convincing
+      synthetic media of real individuals, undermining trust and authentication mechanisms
+    D: Only be created with physical access to a target's device
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Social engineering and fraud
+  - Synthetic media of real individuals
+  - Undermining trust and authentication
+  explanation: 'Deepfakes create significant enterprise risk through social engineering,
+    fraud, and disinformation by generating convincing synthetic media that can bypass
+    identity verification and undermine organizational trust.
+
+    '
+- question_id: TAISE-MINI-004
+  category: module_4
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Data poisoning attacks are most effective during which AI lifecycle
+    phase?
+
+    '
+  options:
+    A: Model serving and inference
+    B: Model documentation and reporting
+    C: Data collection and preprocessing, where adversaries inject malicious samples
+      to manipulate learned decision boundaries
+    D: Post-deployment monitoring
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Data collection and preprocessing phase
+  - Malicious sample injection
+  - Decision boundary manipulation
+  explanation: 'Data poisoning attacks are most effective during data collection and
+    preprocessing, when adversaries can inject malicious samples that corrupt the
+    model''s learned decision boundaries during training.
+
+    '
+- question_id: TAISE-MINI-005
+  category: module_5
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Concept drift in deployed AI models refers to:
+
+    '
+  options:
+    A: The model's source code being modified after deployment
+    B: The model consuming increasing amounts of memory over time
+    C: A deliberate retraining strategy where the objective function is periodically
+      changed
+    D: Changes in the statistical relationship between features and the target variable
+      over time, causing performance degradation
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Statistical relationship changes
+  - Feature-target relationship shift
+  - Performance degradation over time
+  explanation: 'Concept drift occurs when the statistical relationship between input
+    features and the target variable changes over time, causing the model''s predictions
+    to degrade as the learned patterns no longer reflect reality.
+
+    '
+- question_id: TAISE-MINI-006
+  category: module_6
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'AI safety focuses on ensuring AI systems do not cause unintended
+    harm through alignment and robustness, while AI security focuses on:
+
+    '
+  options:
+    A: The same concerns as AI safety - the terms are synonymous
+    B: Protecting AI systems from adversarial threats, unauthorized access, and exploitation
+    C: Physical robot safety only
+    D: Autonomous vehicle safety only
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Adversarial threats
+  - Unauthorized access
+  - Distinction from AI safety
+  explanation: 'AI security focuses on protecting AI systems from adversarial threats,
+    unauthorized access, and exploitation, while AI safety addresses preventing unintended
+    harm through alignment and robustness.
+
+    '
+- question_id: TAISE-MINI-007
+  category: module_7
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In the shared responsibility model for cloud AI, the customer always
+    retains responsibility for:
+
+    '
+  options:
+    A: Nothing - the cloud provider handles all security
+    B: Only network firewall rules
+    C: Only the physical security of their on-premises backup
+    D: Their data, model security, access management, AI-specific configurations,
+      and compliance obligations even when using managed AI services
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Customer data and model security
+  - Access management and compliance
+  - Responsibility even with managed services
+  explanation: 'In the cloud shared responsibility model, customers always retain
+    responsibility for their data, model security, access management, AI-specific
+    configurations, and compliance obligations regardless of the service model used.
+
+    '
+- question_id: TAISE-MINI-008
+  category: module_8
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'The de-identification technique providing the strongest formal privacy
+    guarantee for AI training data is:
+
+    '
+  options:
+    A: Differential privacy, which adds calibrated noise and provides a mathematically
+      provable bound on information inferable about any individual
+    B: Simple removal of name fields from the dataset
+    C: Replacing all dates with the year only
+    D: Using consistent pseudonyms that map one-to-one with real identities
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Differential privacy
+  - Calibrated noise addition
+  - Mathematically provable privacy bound
+  explanation: 'Differential privacy provides the strongest formal privacy guarantee
+    by adding calibrated noise to data or queries, offering a mathematically provable
+    bound on the information that can be inferred about any individual.
+
+    '

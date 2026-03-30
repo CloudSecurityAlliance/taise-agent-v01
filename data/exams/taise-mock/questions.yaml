@@ -1,0 +1,1774 @@
+exam_metadata:
+  exam_id: taise-mock
+  exam_name: TAISE Mock Examination
+  version: '1.0'
+  description: '60 mock multiple-choice questions covering all 10 modules of the CSA
+    Trusted AI Safety Expert (TAISE) certification exam.
+
+    '
+  author: Cloud Security Alliance
+  created_date: '2026-03-27'
+  categories:
+  - id: module_1
+    name: Introduction to AI
+    weight: 10
+  - id: module_2
+    name: Generative AI Architecture & Design
+    weight: 10
+  - id: module_3
+    name: 'AI Use Cases: GenAI, Multimodal & AI Agents'
+    weight: 10
+  - id: module_4
+    name: Ethics, Transparency & Explainability
+    weight: 10
+  - id: module_5
+    name: AI Model Lifecycle & Threat Taxonomy
+    weight: 10
+  - id: module_6
+    name: Governance, Risk Management & Compliance
+    weight: 10
+  - id: module_7
+    name: Introduction to AI Safety & Security
+    weight: 10
+  - id: module_8
+    name: Cloud & AI Security
+    weight: 10
+  - id: module_9
+    name: Data Security & Privacy in AI Systems
+    weight: 10
+  - id: module_10
+    name: Continuous Learning & Adaptation
+    weight: 10
+questions:
+- question_id: TAISE-001
+  category: module_1
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'Which historical event is widely regarded as the formal founding
+    of artificial intelligence as an academic discipline?
+
+    '
+  options:
+    A: The 1956 Dartmouth Conference organized by John McCarthy and colleagues
+    B: The publication of Alan Turing's 1950 paper on machine intelligence
+    C: The creation of the first neural network perceptron by Frank Rosenblatt in
+      1958
+    D: The development of ELIZA at MIT in 1966
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - 1956 Dartmouth Conference
+  - John McCarthy
+  - Formal founding of AI as a discipline
+  explanation: 'The 1956 Dartmouth Conference, organized by John McCarthy, Marvin
+    Minsky, Nathaniel Rochester, and Claude Shannon, is widely recognized as the event
+    that formally established artificial intelligence as an academic field.
+
+    '
+- question_id: TAISE-002
+  category: module_1
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Generative models differ from discriminative models primarily because
+    generative models:
+
+    '
+  options:
+    A: Learn the decision boundary P(Y|X) directly to classify inputs
+    B: Require labeled data exclusively and cannot handle unsupervised learning
+    C: Learn the joint probability distribution P(X,Y) and can synthesize new samples
+      that resemble the training data
+    D: Are limited to classification tasks and cannot produce new data instances
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Joint probability distribution P(X,Y)
+  - Synthesize new samples
+  - Distinction from discriminative models
+  explanation: 'Generative models learn the joint distribution P(X,Y) of inputs and
+    labels, enabling them to generate new data samples, whereas discriminative models
+    learn the conditional P(Y|X) for classification.
+
+    '
+- question_id: TAISE-003
+  category: module_1
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'An organization wants to deploy a custom AI model with full control
+    over the GPU infrastructure, networking, and storage layers. Which cloud service
+    model is most appropriate?
+
+    '
+  options:
+    A: Software as a Service (SaaS) with a managed AI endpoint
+    B: Platform as a Service (PaaS) with managed ML pipelines
+    C: Function as a Service (FaaS) with serverless inference
+    D: Infrastructure as a Service (IaaS) providing raw compute and storage resources
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - IaaS provides full infrastructure control
+  - GPU, networking, storage control
+  - Custom deployment requirements
+  explanation: 'IaaS provides raw compute, networking, and storage resources, giving
+    the organization full control over the infrastructure stack needed for custom
+    AI model deployment.
+
+    '
+- question_id: TAISE-004
+  category: module_1
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'What is the primary role of the attention mechanism in the transformer
+    architecture?
+
+    '
+  options:
+    A: It applies convolutional filters to extract local features from the input sequence
+    B: It replaces recurrent connections by allowing each token to attend to all other
+      tokens in the sequence simultaneously
+    C: It enforces sequential token processing to preserve word order
+    D: It reduces the dimensionality of input embeddings before the feed-forward layers
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Replaces recurrent connections
+  - Parallel attention across all tokens
+  - Transformer architecture
+  explanation: 'The attention mechanism in transformers allows each token to attend
+    to all other tokens simultaneously, eliminating the need for sequential recurrent
+    processing and enabling parallelized computation.
+
+    '
+- question_id: TAISE-005
+  category: module_1
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'Which statement accurately describes large language models (LLMs)?
+
+    '
+  options:
+    A: LLMs are generative models based on the transformer architecture, pretrained
+      on massive text corpora using self-supervised objectives such as next-token
+      prediction
+    B: LLMs are discriminative classifiers trained exclusively on labeled sentiment
+      datasets
+    C: LLMs rely on recurrent neural network architectures limited to 512-token sequences
+    D: LLMs are rule-based systems that use knowledge graphs as their sole information
+      source
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Transformer architecture
+  - Self-supervised pretraining
+  - Next-token prediction
+  explanation: 'LLMs are generative models built on the transformer architecture,
+    pretrained on large text corpora using self-supervised learning objectives like
+    next-token prediction to learn language patterns.
+
+    '
+- question_id: TAISE-006
+  category: module_1
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'A multimodal AI system is best characterized by its ability to:
+
+    '
+  options:
+    A: Process only text input but generate outputs in multiple languages
+    B: Accept and reason over multiple input types such as text, images, audio, and
+      video within a unified model
+    C: Use multiple separate single-modality models with no shared representation
+    D: Generate only one modality of output regardless of input types
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Multiple input types
+  - Unified model
+  - Text, images, audio, video
+  explanation: 'A multimodal AI system processes and reasons across multiple data
+    modalities such as text, images, audio, and video within a single unified model
+    architecture.
+
+    '
+- question_id: TAISE-007
+  category: module_2
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'In the transformer self-attention mechanism, each token produces
+    Q, K, and V vectors through learned linear projections. Attention scores are computed
+    as:
+
+    '
+  options:
+    A: softmax(QK^T / sqrt(d_k)) then multiplied by V to produce context-aware representations
+    B: The sum of Q, K, and V positional encodings
+    C: A random dot product of Q and K without scaling
+    D: A fixed linear transformation of V only, ignoring Q and K
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Scaled dot-product attention formula
+  - softmax normalization
+  - sqrt(d_k) scaling factor
+  explanation: 'Transformer self-attention computes scores via softmax(QK^T / sqrt(d_k))
+    * V, where the scaling factor sqrt(d_k) prevents vanishing gradients in the softmax
+    for large key dimensions.
+
+    '
+- question_id: TAISE-008
+  category: module_2
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Diffusion models generate new data samples by:
+
+    '
+  options:
+    A: Training a generator and discriminator in an adversarial loop until realistic
+      outputs emerge
+    B: Encoding inputs to a latent space using a variational lower bound and then
+      sampling
+    C: Applying a forward process that gradually adds Gaussian noise to data, then
+      learning a reverse denoising process that iteratively removes noise to reconstruct
+      coherent samples
+    D: Using autoregressive token-by-token generation conditioned on previously generated
+      tokens
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Forward noising process
+  - Reverse denoising process
+  - Gaussian noise
+  explanation: 'Diffusion models work by first adding noise to data through a forward
+    process and then learning to reverse that process, iteratively denoising to generate
+    new coherent samples.
+
+    '
+- question_id: TAISE-009
+  category: module_2
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In a GAN, the relationship between the generator and discriminator
+    during training is best described as:
+
+    '
+  options:
+    A: A cooperative process to jointly minimize reconstruction loss
+    B: The discriminator generates candidates and the generator evaluates quality
+    C: The generator must fully converge before the discriminator begins training
+    D: A minimax game where the generator produces realistic samples while the discriminator
+      tries to distinguish real from generated
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Minimax game
+  - Generator produces samples
+  - Discriminator distinguishes real from fake
+  explanation: 'GANs employ a minimax adversarial training framework where the generator
+    learns to produce increasingly realistic samples while the discriminator learns
+    to differentiate real data from generated outputs.
+
+    '
+- question_id: TAISE-010
+  category: module_2
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'Retrieval Augmented Generation (RAG) differs from Knowledge Augmented
+    Generation (KAG) in that:
+
+    '
+  options:
+    A: RAG retrieves relevant documents from an external corpus at inference time,
+      while KAG integrates structured knowledge graphs and entity-relationship reasoning
+      for more precise factual responses
+    B: RAG fine-tunes the model on retrieved documents while KAG uses prompt injection
+      only
+    C: RAG and KAG are identical approaches with different names
+    D: RAG requires model retraining for each new knowledge source
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - RAG retrieves documents at inference time
+  - KAG uses structured knowledge graphs
+  - Entity-relationship reasoning
+  explanation: 'RAG retrieves relevant documents from external corpora during inference,
+    while KAG leverages structured knowledge graphs and entity-relationship reasoning
+    to provide more precise and factually grounded responses.
+
+    '
+- question_id: TAISE-011
+  category: module_2
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'In a VAE, the training objective includes a KL divergence term that:
+
+    '
+  options:
+    A: Acts as a discriminator loss distinguishing real from generated samples
+    B: Computes a contrastive loss between positive and negative sample pairs
+    C: Only measures reconstruction accuracy with no regularization
+    D: Regularizes the latent space to follow a prior distribution, combined with
+      reconstruction loss
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - KL divergence regularization
+  - Latent space prior distribution
+  - Combined with reconstruction loss
+  explanation: 'The KL divergence term in a VAE regularizes the encoder''s latent
+    distribution to approximate a chosen prior (typically standard normal), balancing
+    with reconstruction loss to enable meaningful generation.
+
+    '
+- question_id: TAISE-012
+  category: module_2
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'When building a RAG pipeline, which component is most critical for
+    retrieval relevance?
+
+    '
+  options:
+    A: A generative model with the maximum parameter count available
+    B: A high-quality embedding model and vector store with effective similarity search
+      and chunking strategy
+    C: A rule-based keyword matching system with exact string lookup
+    D: A classification model that categorizes queries before generation
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Embedding model quality
+  - Vector store with similarity search
+  - Chunking strategy
+  explanation: 'The embedding model and vector store with effective similarity search
+    and chunking strategy are most critical for RAG retrieval relevance, as they determine
+    how well relevant context is matched to queries.
+
+    '
+- question_id: TAISE-013
+  category: module_3
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'AI-generated deepfakes pose a significant enterprise risk primarily
+    because they can:
+
+    '
+  options:
+    A: Only affect entertainment media with no enterprise impact
+    B: Always be detected by current commercial antivirus solutions
+    C: Be used for social engineering, fraud, and disinformation by creating convincing
+      synthetic media of real individuals, undermining trust and authentication mechanisms
+    D: Only be created with physical access to a target's device
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Social engineering and fraud
+  - Synthetic media of real individuals
+  - Undermining trust and authentication
+  explanation: 'Deepfakes create significant enterprise risk through social engineering,
+    fraud, and disinformation by generating convincing synthetic media that can bypass
+    identity verification and undermine organizational trust.
+
+    '
+- question_id: TAISE-014
+  category: module_3
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'An AI agent differs from a standard chatbot primarily because an
+    AI agent can:
+
+    '
+  options:
+    A: Only respond to text queries while chatbots handle multimodal inputs
+    B: Autonomously plan, use tools, execute multi-step tasks, and interact with external
+      systems beyond single-turn conversation
+    C: Operate exclusively offline while chatbots require internet connectivity
+    D: Function without any training data while chatbots need large datasets
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Autonomous planning
+  - Tool use and multi-step tasks
+  - External system interaction
+  explanation: 'AI agents distinguish themselves from chatbots through autonomous
+    planning, tool use, multi-step task execution, and the ability to interact with
+    external systems beyond simple conversational exchanges.
+
+    '
+- question_id: TAISE-015
+  category: module_3
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'A healthcare AI diagnostic system trained predominantly on data
+    from one demographic group will most likely suffer from:
+
+    '
+  options:
+    A: Algorithmic bias from the model architecture
+    B: Deployment bias from incorrect clinical integration
+    C: Sampling bias due to non-representative training data that overrepresents certain
+      demographics
+    D: Historical bias encoded by past medical practitioners
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Sampling bias
+  - Non-representative training data
+  - Demographic overrepresentation
+  explanation: 'Training predominantly on one demographic group introduces sampling
+    bias, where the non-representative data causes the model to perform poorly on
+    underrepresented populations.
+
+    '
+- question_id: TAISE-016
+  category: module_3
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In the responsible AI lifecycle, ethical impact assessments and
+    bias audits should first be conducted:
+
+    '
+  options:
+    A: Only after the model is deployed to production
+    B: Only during annual compliance reviews after deployment
+    C: Exclusively during the model decommissioning phase
+    D: During the data collection and model design phase before any training begins
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Early lifecycle stage
+  - Before training begins
+  - Data collection and design phase
+  explanation: 'Ethical impact assessments and bias audits should begin during data
+    collection and model design to identify and mitigate potential harms before they
+    become embedded in the trained model.
+
+    '
+- question_id: TAISE-017
+  category: module_3
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Deployment bias in AI systems describes the situation where:
+
+    '
+  options:
+    A: The model architecture introduces systematic errors
+    B: The training data contains historical prejudices
+    C: The model performs well in testing but exhibits discriminatory behavior due
+      to mismatches between test and real-world deployment conditions
+    D: The sampling methodology excludes minority populations
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Test vs. real-world mismatch
+  - Discriminatory behavior in deployment
+  - Performance gap between testing and production
+  explanation: 'Deployment bias occurs when a model that performs well in controlled
+    testing exhibits discriminatory behavior in production due to mismatches between
+    test conditions and real-world deployment environments.
+
+    '
+- question_id: TAISE-018
+  category: module_3
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'SHAP provides AI model explainability by assigning each feature
+    an importance value based on:
+
+    '
+  options:
+    A: Retraining the model with each feature removed one at a time
+    B: Generating a single global decision tree that approximates the original model
+    C: Visualizing the model's internal layer activations as a heatmap
+    D: Shapley values from cooperative game theory, representing each feature's marginal
+      contribution across all possible feature coalitions
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Shapley values
+  - Cooperative game theory
+  - Marginal contribution across feature coalitions
+  explanation: 'SHAP uses Shapley values from cooperative game theory to compute each
+    feature''s marginal contribution across all possible feature coalitions, providing
+    theoretically consistent and fair attribution scores.
+
+    '
+- question_id: TAISE-019
+  category: module_4
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'LIME differs from SHAP in that LIME:
+
+    '
+  options:
+    A: Provides global explanations for the entire model while SHAP only explains
+      individual predictions
+    B: Generates local explanations by perturbing inputs around a specific instance
+      and fitting an interpretable surrogate model, while SHAP provides theoretically
+      consistent Shapley-based attributions
+    C: Requires access to model internals while SHAP is model-agnostic
+    D: Only works with image models while SHAP only works with tabular data
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Local perturbation-based explanations
+  - Interpretable surrogate model
+  - Contrast with Shapley-based consistency
+  explanation: 'LIME generates local explanations by perturbing inputs around a specific
+    instance and fitting a simple interpretable model, while SHAP provides mathematically
+    consistent attributions grounded in Shapley value theory.
+
+    '
+- question_id: TAISE-020
+  category: module_4
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'A model card is a standardized documentation artifact that:
+
+    '
+  options:
+    A: Specifies the GPU hardware used during training
+    B: Serves as an access credential for API authentication
+    C: Describes a model's intended use, training data, performance metrics, limitations,
+      ethical considerations, and evaluation results across demographic groups
+    D: Provides a financial cost summary for model development
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Intended use and limitations
+  - Performance metrics and evaluation
+  - Ethical considerations
+  explanation: 'Model cards are standardized documentation that describe a model''s
+    intended use, training data, performance metrics, limitations, ethical considerations,
+    and demographic evaluation results for transparency and accountability.
+
+    '
+- question_id: TAISE-021
+  category: module_4
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'Equalized odds as a fairness metric requires that:
+
+    '
+  options:
+    A: The model achieves the same overall accuracy across all test datasets
+    B: The model's true positive rate and false positive rate are equal across protected
+      groups, ensuring error rates do not disproportionately affect any group
+    C: All features are weighted equally regardless of predictive power
+    D: The training data contains exactly equal representation of all demographic
+      groups
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - True positive rate equality
+  - False positive rate equality
+  - Across protected groups
+  explanation: 'Equalized odds requires that both the true positive rate and false
+    positive rate are equal across protected groups, ensuring the model''s errors
+    are distributed equitably.
+
+    '
+- question_id: TAISE-022
+  category: module_4
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'Integrated Gradients computes feature attributions by:
+
+    '
+  options:
+    A: Computing the path integral of gradients along a straight line from a baseline
+      input to the actual input, attributing the prediction difference to each feature
+    B: Training a secondary model to predict feature importances
+    C: Randomly masking input features and measuring output variance
+    D: Counting the frequency of each feature across the training dataset
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Path integral of gradients
+  - Baseline to actual input
+  - Feature attribution
+  explanation: 'Integrated Gradients computes the path integral of gradients along
+    a straight line from a baseline input to the actual input, providing axiomatic
+    feature attributions that satisfy sensitivity and implementation invariance.
+
+    '
+- question_id: TAISE-023
+  category: module_4
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Data poisoning attacks are most effective during which AI lifecycle
+    phase?
+
+    '
+  options:
+    A: Model serving and inference
+    B: Model documentation and reporting
+    C: Data collection and preprocessing, where adversaries inject malicious samples
+      to manipulate learned decision boundaries
+    D: Post-deployment monitoring
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Data collection and preprocessing phase
+  - Malicious sample injection
+  - Decision boundary manipulation
+  explanation: 'Data poisoning attacks are most effective during data collection and
+    preprocessing, when adversaries can inject malicious samples that corrupt the
+    model''s learned decision boundaries during training.
+
+    '
+- question_id: TAISE-024
+  category: module_4
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'A backdoor attack on an AI model involves embedding a hidden trigger
+    pattern during training so the model:
+
+    '
+  options:
+    A: Overwhelms the API with excessive requests when triggered
+    B: Behaves normally on clean inputs but produces attacker-chosen outputs when
+      the trigger pattern is present
+    C: Physically damages the hardware running the model
+    D: Intercepts network traffic between client and endpoint
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Hidden trigger pattern
+  - Normal behavior on clean inputs
+  - Attacker-chosen outputs on trigger
+  explanation: 'Backdoor attacks embed a hidden trigger during training that causes
+    the model to behave normally on clean inputs but produce attacker-specified outputs
+    when the trigger pattern is present in the input.
+
+    '
+- question_id: TAISE-025
+  category: module_5
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'The NIST AI RMF defines four core functions: GOVERN, MAP, MEASURE,
+    and MANAGE. The MAP function specifically:
+
+    '
+  options:
+    A: Establishes accountability structures and policies for responsible AI
+    B: Identifies the AI system's context, intended use, and catalogs risks across
+      the AI lifecycle
+    C: Implements risk response strategies and continuous monitoring
+    D: Assesses and quantitatively tracks identified risks over time
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Context and intended use identification
+  - Risk cataloging
+  - AI lifecycle scope
+  explanation: 'The MAP function in the NIST AI RMF identifies the AI system''s context,
+    stakeholders, and intended use while cataloging risks across the full AI lifecycle
+    to inform risk assessment and management.
+
+    '
+- question_id: TAISE-026
+  category: module_5
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Concept drift in deployed AI models refers to:
+
+    '
+  options:
+    A: The model's source code being modified after deployment
+    B: The model consuming increasing amounts of memory over time
+    C: A deliberate retraining strategy where the objective function is periodically
+      changed
+    D: Changes in the statistical relationship between features and the target variable
+      over time, causing performance degradation
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Statistical relationship changes
+  - Feature-target relationship shift
+  - Performance degradation over time
+  explanation: 'Concept drift occurs when the statistical relationship between input
+    features and the target variable changes over time, causing the model''s predictions
+    to degrade as the learned patterns no longer reflect reality.
+
+    '
+- question_id: TAISE-027
+  category: module_5
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'A membership inference attack attempts to determine whether a specific
+    data record was part of the training set by:
+
+    '
+  options:
+    A: Extracting the model's complete training dataset through brute force
+    B: Modifying the model's weights to insert a backdoor
+    C: Gaining administrative access to the model hosting infrastructure
+    D: Analyzing differences in model confidence or behavior on members versus non-members
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Model confidence analysis
+  - Behavioral differences
+  - Member vs. non-member distinction
+  explanation: 'Membership inference attacks exploit differences in how a model responds
+    to training data members versus non-members, typically observing higher confidence
+    or different loss patterns for data used during training.
+
+    '
+- question_id: TAISE-028
+  category: module_5
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'ISO 42001 specifically addresses:
+
+    '
+  options:
+    A: AI risk management guidelines only
+    B: Requirements for establishing, implementing, and continually improving an AI
+      management system, providing a certifiable organizational governance framework
+    C: AI system lifecycle processes
+    D: Information security management systems
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - AI management system
+  - Certifiable governance framework
+  - Establish, implement, improve
+  explanation: 'ISO 42001 provides requirements for establishing, implementing, maintaining,
+    and continually improving an AI management system, offering organizations a certifiable
+    governance framework for responsible AI.
+
+    '
+- question_id: TAISE-029
+  category: module_5
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'MITRE ATLAS is best described as:
+
+    '
+  options:
+    A: A knowledge base of adversarial tactics, techniques, and procedures specific
+      to AI/ML systems, modeled after the MITRE ATT&CK framework
+    B: A vulnerability scanning tool for AI model binaries
+    C: A cloud security benchmark for AI workloads published by CIS
+    D: A regulatory compliance checklist for the EU AI Act
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Adversarial tactics, techniques, and procedures
+  - AI/ML specific
+  - Modeled after ATT&CK
+  explanation: 'MITRE ATLAS is a knowledge base of adversarial tactics, techniques,
+    and procedures targeting AI/ML systems, structured similarly to the MITRE ATT&CK
+    framework to help organizations understand and defend against AI-specific threats.
+
+    '
+- question_id: TAISE-030
+  category: module_5
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Under the EU AI Act, prohibited (unacceptable risk) AI applications
+    include:
+
+    '
+  options:
+    A: AI systems used for weather forecasting
+    B: AI systems used for spam email filtering
+    C: Systems using subliminal manipulation to cause harm, government social scoring,
+      and real-time public biometric identification for law enforcement (with narrow
+      exceptions)
+    D: AI systems that recommend music playlists to users
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Subliminal manipulation
+  - Social scoring
+  - Real-time biometric identification
+  explanation: 'The EU AI Act prohibits AI applications deemed unacceptable risk,
+    including subliminal manipulation causing harm, government social scoring systems,
+    and real-time public biometric identification for law enforcement with limited
+    exceptions.
+
+    '
+- question_id: TAISE-031
+  category: module_6
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'The EU AI Act''s phased enforcement means prohibitions on unacceptable-risk
+    systems take effect:
+
+    '
+  options:
+    A: Simultaneously with all other provisions on a single date
+    B: Only as voluntary guidelines with no binding dates
+    C: Six months after entry into force, with high-risk system requirements phasing
+      in over 12-36 months
+    D: Exclusively for EU-based companies, not foreign providers serving EU markets
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Six months for prohibitions
+  - Phased timeline
+  - 12-36 months for high-risk requirements
+  explanation: 'The EU AI Act uses phased enforcement: prohibitions on unacceptable-risk
+    systems take effect six months after entry into force, while high-risk system
+    requirements phase in over 12 to 36 months.
+
+    '
+- question_id: TAISE-032
+  category: module_6
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'In an AI governance RACI matrix, the Responsible party performs
+    the work while the Accountable party:
+
+    '
+  options:
+    A: Always refers to the same person as the Responsible party
+    B: Is the single individual who owns the outcome and has final decision authority
+    C: Refers to external auditors only
+    D: Does the technical work while the Responsible party signs off
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Single individual ownership
+  - Final decision authority
+  - Outcome accountability
+  explanation: 'In a RACI matrix, the Accountable party is the single individual who
+    ultimately owns the outcome and has final decision-making authority, distinct
+    from the Responsible party who performs the work.
+
+    '
+- question_id: TAISE-033
+  category: module_6
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'The CSA AI Controls Matrix (AICM) extends beyond traditional cloud
+    controls (CCM) to address:
+
+    '
+  options:
+    A: Only penetration testing for AI models
+    B: AI-specific risks including model security, data governance, bias management,
+      and AI lifecycle controls
+    C: Certification exclusively for cloud service providers
+    D: Replacement of all ISO standards for information security management
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - AI-specific risks
+  - Model security and bias management
+  - Extension beyond CCM
+  explanation: 'The CSA AICM extends the Cloud Controls Matrix to address AI-specific
+    risks including model security, data governance, bias management, and comprehensive
+    AI lifecycle controls.
+
+    '
+- question_id: TAISE-034
+  category: module_6
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'A model card documents performance and limitations, a data sheet
+    documents dataset composition, and a risk card documents:
+
+    '
+  options:
+    A: The same information as model cards under a different name
+    B: Hardware requirements for model inference
+    C: Marketing materials for stakeholder presentations
+    D: Identified risks, their severity, and mitigation measures specific to the deployment
+      context
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Identified risks and severity
+  - Mitigation measures
+  - Deployment context specificity
+  explanation: 'Risk cards document identified risks, their severity levels, and specific
+    mitigation measures tailored to the deployment context, complementing model cards
+    and data sheets in AI documentation.
+
+    '
+- question_id: TAISE-035
+  category: module_6
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'The NIST AI RMF trustworthiness characteristic that requires AI
+    systems to produce consistent outputs and withstand adversarial conditions is:
+
+    '
+  options:
+    A: Reliability and robustness
+    B: Fairness
+    C: Transparency
+    D: Privacy
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Reliability
+  - Robustness
+  - Consistent outputs under adversarial conditions
+  explanation: 'Reliability and robustness in the NIST AI RMF require AI systems to
+    produce consistent, dependable outputs and maintain performance even under adversarial
+    conditions or unexpected inputs.
+
+    '
+- question_id: TAISE-036
+  category: module_6
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'AI safety focuses on ensuring AI systems do not cause unintended
+    harm through alignment and robustness, while AI security focuses on:
+
+    '
+  options:
+    A: The same concerns as AI safety - the terms are synonymous
+    B: Protecting AI systems from adversarial threats, unauthorized access, and exploitation
+    C: Physical robot safety only
+    D: Autonomous vehicle safety only
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Adversarial threats
+  - Unauthorized access
+  - Distinction from AI safety
+  explanation: 'AI security focuses on protecting AI systems from adversarial threats,
+    unauthorized access, and exploitation, while AI safety addresses preventing unintended
+    harm through alignment and robustness.
+
+    '
+- question_id: TAISE-037
+  category: module_7
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'The Four Pillars of AI Security as defined by CSA are:
+
+    '
+  options:
+    A: Vulnerability Management, Data Security & Privacy, Model Security, Governance
+      & Compliance
+    B: Confidentiality, Integrity, Availability, Non-repudiation
+    C: Authentication, Authorization, Encryption, Logging
+    D: Network Security, Endpoint Security, Application Security, Cloud Security
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Vulnerability Management
+  - Data Security & Privacy, Model Security
+  - Governance & Compliance
+  explanation: 'CSA defines the Four Pillars of AI Security as Vulnerability Management,
+    Data Security & Privacy, Model Security, and Governance & Compliance, providing
+    a comprehensive framework for securing AI systems.
+
+    '
+- question_id: TAISE-038
+  category: module_7
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'An example of "security for AI" (as opposed to "AI for security")
+    is:
+
+    '
+  options:
+    A: Using ML to detect network intrusions in real time
+    B: Training an AI model to classify malware samples
+    C: Implementing adversarial robustness testing, input validation, and model access
+      controls to protect a deployed AI system
+    D: Using NLP to analyze threat intelligence reports
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Protecting the AI system itself
+  - Adversarial robustness and input validation
+  - Distinction from AI for security
+  explanation: '"Security for AI" refers to protecting AI systems themselves through
+    measures like adversarial robustness testing, input validation, and access controls,
+    as opposed to using AI as a tool for security operations.
+
+    '
+- question_id: TAISE-039
+  category: module_7
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Securing generative AI presents unique challenges because:
+
+    '
+  options:
+    A: Generative AI systems do not require network security controls
+    B: Traditional software has more complex security requirements in all cases
+    C: Generative AI systems are immune to denial-of-service attacks
+    D: Generative AI introduces novel attack surfaces including prompt injection,
+      training data poisoning, model inversion, and hallucination-based misinformation
+      with no direct traditional parallel
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Novel attack surfaces
+  - Prompt injection, data poisoning, model inversion
+  - No traditional parallel
+  explanation: 'Generative AI introduces unique attack surfaces such as prompt injection,
+    training data poisoning, model inversion, and hallucination-based misinformation
+    that have no direct equivalents in traditional software security.
+
+    '
+- question_id: TAISE-040
+  category: module_7
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'An enterprise AI security architecture should address threats at:
+
+    '
+  options:
+    A: Only the application layer where users interact with the model
+    B: Multiple layers including data infrastructure, model training/serving, API,
+      network, identity management, and governance in a defense-in-depth approach
+    C: Only the network perimeter layer
+    D: Only the physical security layer of the data center
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Multiple layers
+  - Defense-in-depth approach
+  - Data, model, API, network, identity, governance
+  explanation: 'Enterprise AI security requires a defense-in-depth approach addressing
+    threats at multiple layers including data infrastructure, model training/serving,
+    API, network, identity management, and governance.
+
+    '
+- question_id: TAISE-041
+  category: module_7
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'AI alignment research is primarily concerned with:
+
+    '
+  options:
+    A: Ensuring AI systems' objectives and behaviors remain consistent with human
+      intentions and societal values as systems become more capable
+    B: Optimizing model inference speed for production deployment
+    C: Aligning hardware architecture with software requirements
+    D: Ensuring all team members agree on the project timeline
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Human intentions and values
+  - AI objectives and behaviors
+  - Increasing capability concern
+  explanation: 'AI alignment research focuses on ensuring that AI systems'' objectives
+    and behaviors remain consistent with human intentions and societal values, especially
+    as these systems become increasingly capable.
+
+    '
+- question_id: TAISE-042
+  category: module_7
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In the shared responsibility model for cloud AI, the customer always
+    retains responsibility for:
+
+    '
+  options:
+    A: Nothing - the cloud provider handles all security
+    B: Only network firewall rules
+    C: Only the physical security of their on-premises backup
+    D: Their data, model security, access management, AI-specific configurations,
+      and compliance obligations even when using managed AI services
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Customer data and model security
+  - Access management and compliance
+  - Responsibility even with managed services
+  explanation: 'In the cloud shared responsibility model, customers always retain
+    responsibility for their data, model security, access management, AI-specific
+    configurations, and compliance obligations regardless of the service model used.
+
+    '
+- question_id: TAISE-043
+  category: module_8
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'Applying Zero Trust to AI workloads requires:
+
+    '
+  options:
+    A: Allowing all internal services unrestricted access to model endpoints within
+      the corporate network
+    B: Continuous verification of every request to AI model endpoints, least-privilege
+      access, micro-segmentation, and monitoring all data flows regardless of network
+      location
+    C: Trusting all VPN traffic as inherently safe
+    D: Disabling logging on AI endpoints to reduce latency
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Continuous verification
+  - Least-privilege access and micro-segmentation
+  - Network location independence
+  explanation: 'Zero Trust for AI workloads requires continuous verification of every
+    request, least-privilege access, micro-segmentation, and monitoring all data flows
+    regardless of whether traffic originates inside or outside the network.
+
+    '
+- question_id: TAISE-044
+  category: module_8
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Regular KMS key rotation for AI systems in cloud environments:
+
+    '
+  options:
+    A: Is a cosmetic compliance checkbox with no real security benefit
+    B: Only applies to database encryption and is irrelevant to AI
+    C: Should be performed once at deployment and never again
+    D: Limits the blast radius of a compromised key and ensures encrypted model artifacts
+      and training data are protected by current keys
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Blast radius limitation
+  - Compromised key containment
+  - Model artifact and data protection
+  explanation: 'Regular KMS key rotation limits the blast radius if a key is compromised
+    and ensures that encrypted model artifacts and training data remain protected
+    by current cryptographic keys.
+
+    '
+- question_id: TAISE-045
+  category: module_8
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'AI incident response differs from traditional IT incident response
+    because it must address:
+
+    '
+  options:
+    A: No specialized scenarios beyond standard IT playbooks
+    B: Nothing additional, since AI systems are deterministic and cannot experience
+      incidents
+    C: AI-specific scenarios such as model poisoning, adversarial manipulation, bias-related
+      harms, and data leakage through model outputs, potentially requiring model rollback
+      or retraining
+    D: Only scenarios handled by the data science team in isolation
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - AI-specific incident types
+  - Model poisoning and adversarial manipulation
+  - Model rollback or retraining as response
+  explanation: 'AI incident response must address unique scenarios like model poisoning,
+    adversarial manipulation, bias-related harms, and data leakage through outputs,
+    often requiring model rollback or retraining beyond traditional IT response.
+
+    '
+- question_id: TAISE-046
+  category: module_8
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In MLOps pipeline security, dependency pinning and lockfiles ensure:
+
+    '
+  options:
+    A: Improved model accuracy by locking hyperparameters
+    B: Locked model weights to prevent further training
+    C: Pinned DNS entries for model serving endpoints
+    D: Reproducible builds and prevention of supply chain attacks by fixing exact
+      library versions
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Reproducible builds
+  - Supply chain attack prevention
+  - Exact library version fixing
+  explanation: 'Dependency pinning and lockfiles ensure reproducible builds and prevent
+    supply chain attacks by fixing exact library versions, preventing malicious or
+    incompatible updates from entering the ML pipeline.
+
+    '
+- question_id: TAISE-047
+  category: module_8
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'Data lineage in AI systems provides:
+
+    '
+  options:
+    A: Reduced computational cost of model training
+    B: A complete traceable record of data origins, transformations, and usage throughout
+      the AI pipeline, enabling audit compliance and governance verification
+    C: A synonym for data backup and disaster recovery
+    D: Value only for visualization dashboards with no security relevance
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Traceable record of data origins
+  - Transformations and usage tracking
+  - Audit compliance and governance
+  explanation: 'Data lineage provides a complete traceable record of data origins,
+    transformations, and usage throughout the AI pipeline, essential for audit compliance,
+    governance verification, and incident investigation.
+
+    '
+- question_id: TAISE-048
+  category: module_8
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'The de-identification technique providing the strongest formal privacy
+    guarantee for AI training data is:
+
+    '
+  options:
+    A: Differential privacy, which adds calibrated noise and provides a mathematically
+      provable bound on information inferable about any individual
+    B: Simple removal of name fields from the dataset
+    C: Replacing all dates with the year only
+    D: Using consistent pseudonyms that map one-to-one with real identities
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Differential privacy
+  - Calibrated noise addition
+  - Mathematically provable privacy bound
+  explanation: 'Differential privacy provides the strongest formal privacy guarantee
+    by adding calibrated noise to data or queries, offering a mathematically provable
+    bound on the information that can be inferred about any individual.
+
+    '
+- question_id: TAISE-049
+  category: module_9
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'An organization subject to HIPAA training an AI model on patient
+    records must primarily ensure that:
+
+    '
+  options:
+    A: HIPAA does not apply to AI systems
+    B: HIPAA only requires encrypting data in transit with no AI training constraints
+    C: PHI is de-identified per HIPAA Safe Harbor or Expert Determination methods,
+      or that appropriate BAAs and technical safeguards are in place
+    D: Any patient data can be used if the model deploys within the hospital network
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - PHI de-identification methods
+  - Safe Harbor or Expert Determination
+  - BAAs and technical safeguards
+  explanation: 'HIPAA requires that PHI used for AI training be de-identified using
+    Safe Harbor or Expert Determination methods, or that appropriate Business Associate
+    Agreements and technical safeguards are in place.
+
+    '
+- question_id: TAISE-050
+  category: module_9
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'Data minimization in AI governance requires:
+
+    '
+  options:
+    A: Collecting the maximum data possible to improve accuracy
+    B: Collecting and retaining only data necessary and proportionate for the specified
+      AI purpose, deleting data no longer needed
+    C: Minimizing file sizes through compression
+    D: Using the smallest model architecture regardless of task complexity
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Necessary and proportionate collection
+  - Purpose limitation
+  - Deletion when no longer needed
+  explanation: 'Data minimization requires collecting and retaining only data that
+    is necessary and proportionate for the specified AI purpose, and deleting data
+    when it is no longer needed for that purpose.
+
+    '
+- question_id: TAISE-051
+  category: module_9
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Synthetic data offers privacy benefits for AI training because it:
+
+    '
+  options:
+    A: Is always perfectly representative of the real population
+    B: Eliminates all need for data governance and compliance
+    C: Mimics statistical properties of real data without containing actual individual
+      records, reducing re-identification risk while requiring validation against
+      memorization
+    D: Is only useful for testing and never for production training
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Statistical property mimicry
+  - No actual individual records
+  - Reduced re-identification risk
+  explanation: 'Synthetic data preserves the statistical properties of real data without
+    containing actual individual records, reducing re-identification risk while still
+    requiring validation to ensure the generator has not memorized real data.
+
+    '
+- question_id: TAISE-052
+  category: module_9
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Audit logging for AI systems should capture:
+
+    '
+  options:
+    A: Only failed login attempts
+    B: Only the final model accuracy metric per training run
+    C: Nothing additional if the system is in a private cloud
+    D: All model inference requests, training data access, model version changes,
+      configuration modifications, and access control changes for forensic analysis
+      and compliance
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Comprehensive event capture
+  - Inference, training, version, configuration, access
+  - Forensic analysis and compliance
+  explanation: 'AI audit logging should comprehensively capture all inference requests,
+    training data access, model version changes, configuration modifications, and
+    access control changes to support forensic analysis and compliance requirements.
+
+    '
+- question_id: TAISE-053
+  category: module_9
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'Prediction drift differs from concept drift in that prediction drift:
+
+    '
+  options:
+    A: Is identical to concept drift
+    B: Only affects regression models while concept drift only affects classifiers
+    C: Refers to changes in the model's output distribution over time, while concept
+      drift refers to changes in the underlying feature-target relationship - prediction
+      drift may symptom concept drift but can also occur independently
+    D: Is always caused by hardware degradation
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Output distribution changes
+  - Feature-target relationship changes
+  - Independent occurrence possible
+  explanation: 'Prediction drift refers to changes in the model''s output distribution
+    over time, while concept drift refers to shifts in the underlying feature-target
+    relationship. Prediction drift can be a symptom of concept drift or occur independently.
+
+    '
+- question_id: TAISE-054
+  category: module_9
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Catastrophic forgetting in continuous learning occurs when:
+
+    '
+  options:
+    A: The model runs out of disk space for new data
+    B: The model forgets to log predictions to the monitoring system
+    C: Knowledge is deliberately removed as an outdated-data cleanup process
+    D: A neural network's performance on previously learned tasks severely degrades
+      as new weight updates overwrite earlier learned representations
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Performance degradation on prior tasks
+  - Weight updates overwriting representations
+  - Continuous learning context
+  explanation: 'Catastrophic forgetting occurs when new weight updates in a neural
+    network overwrite previously learned representations, causing severe performance
+    degradation on earlier tasks during continuous learning.
+
+    '
+- question_id: TAISE-055
+  category: module_10
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'Federated learning preserves data privacy by:
+
+    '
+  options:
+    A: Allowing participants to collaboratively train a shared model while keeping
+      data local, sharing only model updates so raw data never leaves its source
+    B: Encrypting all training data with a single shared key across organizations
+    C: Centralizing all participant data into a secure warehouse before training
+    D: Replacing real data with synthetic data at each participant
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Collaborative training
+  - Data remains local
+  - Only model updates shared
+  explanation: 'Federated learning enables collaborative model training across participants
+    while preserving privacy by keeping raw data local and sharing only model updates
+    or gradients.
+
+    '
+- question_id: TAISE-056
+  category: module_10
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'Online learning''s primary advantage and risk compared to batch
+    learning is that it:
+
+    '
+  options:
+    A: Is always more accurate with no additional risks
+    B: Only works with reinforcement learning objectives
+    C: Requires reprocessing the entire dataset with each update
+    D: Can adapt to new data in real-time via incremental updates but is vulnerable
+      to adversarial data injection, concept drift amplification, and instability
+      from poorly tuned learning rates
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Real-time incremental adaptation
+  - Adversarial data injection vulnerability
+  - Concept drift amplification and instability risks
+  explanation: 'Online learning offers real-time adaptation through incremental updates
+    but introduces risks including adversarial data injection, concept drift amplification,
+    and instability from poorly tuned learning rates.
+
+    '
+- question_id: TAISE-057
+  category: module_10
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'MLSecOps integrates:
+
+    '
+  options:
+    A: Only traditional DevOps practices
+    B: ML operations, security engineering, and DevSecOps - combining ML pipeline
+      automation with security controls at every lifecycle stage from data ingestion
+      through monitoring
+    C: Only network security and penetration testing
+    D: Only compliance auditing and documentation
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - ML operations integration
+  - Security engineering and DevSecOps
+  - Full lifecycle security controls
+  explanation: 'MLSecOps integrates ML operations, security engineering, and DevSecOps
+    practices to embed security controls at every stage of the ML lifecycle from data
+    ingestion through production monitoring.
+
+    '
+- question_id: TAISE-058
+  category: module_10
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'A problematic feedback loop in a deployed AI system arises when:
+
+    '
+  options:
+    A: Users provide any feedback whatsoever
+    B: Feedback is collected through manual surveys
+    C: The model's predictions influence the data it subsequently trains on, creating
+      a self-reinforcing cycle that amplifies biases and drifts from ground truth
+    D: Feedback is stored in a database rather than a flat file
+  correct_answer: C
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Predictions influence training data
+  - Self-reinforcing cycle
+  - Bias amplification and ground truth drift
+  explanation: 'Problematic feedback loops occur when a model''s predictions influence
+    the data it subsequently trains on, creating self-reinforcing cycles that amplify
+    existing biases and cause the model to drift from ground truth.
+
+    '
+- question_id: TAISE-059
+  category: module_10
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'Contextual feedback analysis in AI monitoring involves:
+
+    '
+  options:
+    A: Analyzing the physical context where AI hardware is deployed
+    B: Evaluating user feedback and model performance within the specific operational
+      context to distinguish genuine degradation from expected contextual variation,
+      informing targeted updates
+    C: Analyzing the feedback form's UI design
+    D: Counting total daily feedback submissions without qualitative analysis
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Operational context evaluation
+  - Genuine degradation vs. contextual variation
+  - Targeted update decisions
+  explanation: 'Contextual feedback analysis evaluates user feedback and model performance
+    within specific operational contexts to distinguish genuine degradation from expected
+    variation, enabling targeted and appropriate model updates.
+
+    '
+- question_id: TAISE-060
+  category: module_10
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'An organization monitoring for data drift should:
+
+    '
+  options:
+    A: Check distributions only once during initial deployment
+    B: Assume distributions never change if the data source is the same
+    C: Only monitor accuracy and ignore input data characteristics
+    D: Continuously compare production data distributions against training reference
+      distributions using statistical tests and set automated alerts when drift exceeds
+      thresholds
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Continuous distribution comparison
+  - Statistical tests against reference
+  - Automated alerts on threshold breach
+  explanation: 'Organizations should continuously compare production data distributions
+    against training reference distributions using statistical tests and set automated
+    alerts when drift exceeds predefined thresholds.
+
+    '

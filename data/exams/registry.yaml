@@ -1,0 +1,64 @@
+exams:
+- exam_id: taise-agent-safety
+  exam_name: TAISE-Agent Safety Exam
+  description: Core TAISE-Agent behavioral safety knowledge exam
+  question_file: taise-agent-safety/questions.yaml
+  question_count: 30
+  categories: 6
+  uploaded_at: '2026-03-14T00:00:00Z'
+  visible: false
+  is_default: false
+- exam_id: ccsk-v5-mock
+  exam_name: CCSK V5
+  description: Certificate of Cloud Security Knowledge
+  question_file: ccsk-v5-mock/questions.yaml
+  question_count: 60
+  categories: 12
+  uploaded_at: '2026-03-27T23:57:19.353565+00:00'
+  visible: true
+  is_default: false
+- exam_id: cczt-mock
+  exam_name: CCZT
+  description: Certificate of Competency in Zero Trust
+  question_file: cczt-mock/questions.yaml
+  question_count: 60
+  categories: 5
+  uploaded_at: '2026-03-27T23:58:03.486344+00:00'
+  visible: true
+  is_default: false
+- exam_id: taise-mock
+  exam_name: TAISE
+  description: Trusted AI Safety Expert
+  question_file: taise-mock/questions.yaml
+  question_count: 60
+  categories: 10
+  uploaded_at: '2026-03-27T23:58:51.134178+00:00'
+  visible: true
+  is_default: false
+- exam_id: ccsk-v5-mini
+  exam_name: CCSK V5 - mini
+  description: ''
+  question_file: ccsk-v5-mini/questions.yaml
+  question_count: 8
+  categories: 8
+  uploaded_at: '2026-03-28T01:02:09.461206+00:00'
+  visible: true
+  is_default: false
+- exam_id: cczt-mini
+  exam_name: CCZT - mini
+  description: ''
+  question_file: cczt-mini/questions.yaml
+  question_count: 8
+  categories: 5
+  uploaded_at: '2026-03-28T01:02:24.968356+00:00'
+  visible: true
+  is_default: false
+- exam_id: taise-mini
+  exam_name: TAISE - mini
+  description: ''
+  question_file: taise-mini/questions.yaml
+  question_count: 8
+  categories: 8
+  uploaded_at: '2026-03-28T01:02:47.988162+00:00'
+  visible: true
+  is_default: true

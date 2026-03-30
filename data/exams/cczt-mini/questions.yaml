@@ -1,0 +1,247 @@
+exam_metadata:
+  exam_id: cczt-mini
+  exam_name: CCZT Mini Exam (System Test)
+  version: '1.0'
+  description: 8-question mini exam for system testing. Sampled from the full 60-question
+    CCZT mock exam.
+  author: Cloud Security Alliance
+  created_date: '2026-03-27'
+  categories:
+  - id: domain_1
+    name: Introduction to Zero Trust Architecture
+    weight: 20
+  - id: domain_2
+    name: Introduction to Software-Defined Perimeter
+    weight: 20
+  - id: domain_3
+    name: Zero Trust Strategy
+    weight: 20
+  - id: domain_4
+    name: Zero Trust Planning
+    weight: 20
+  - id: domain_5
+    name: Zero Trust Implementation
+    weight: 20
+questions:
+- question_id: CCZT-MINI-001
+  category: domain_1
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In Zero Trust Architecture, which component is responsible for making
+    access decisions based on policy?
+
+    '
+  options:
+    A: Policy Enforcement Point (PEP)
+    B: Policy Decision Point (PDP)
+    C: Policy Information Point (PIP)
+    D: Policy Administration Point (PAP)
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Policy Decision Point evaluates requests
+  - PDP makes allow/deny decisions
+  explanation: 'The Policy Decision Point (PDP) is responsible for evaluating access
+    requests against defined policies and making the allow or deny decision. The PEP
+    enforces those decisions, while the PIP provides data inputs.
+
+    '
+- question_id: CCZT-MINI-002
+  category: domain_2
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'In the context of SDP, what does control plane and data plane separation
+    achieve?
+
+    '
+  options:
+    A: It physically separates networking hardware for security
+    B: It allows administrators to manage policies from the data plane
+    C: It eliminates the need for encryption on the data plane
+    D: It ensures that authentication decisions and data transmission occur on different
+      channels, reducing the attack surface
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Separation of authentication and data transmission
+  - Reduced attack surface through channel isolation
+  explanation: 'Control plane and data plane separation ensures that authentication
+    decisions and data transmission occur on different channels, reducing the attack
+    surface by preventing attackers from exploiting the authentication mechanism through
+    the data channel.
+
+    '
+- question_id: CCZT-MINI-003
+  category: domain_3
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'A CISO needs to justify Zero Trust investment to the board. Which
+    metric would be most compelling?
+
+    '
+  options:
+    A: Reduction in mean time to detect and respond to breaches, and decreased blast
+      radius of security incidents
+    B: The number of firewalls deployed across the network
+    C: The total number of Zero Trust vendors evaluated during procurement
+    D: The percentage of employees who completed a Zero Trust awareness survey
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - MTTD/MTTR reduction
+  - Decreased blast radius
+  explanation: 'Reduction in mean time to detect and respond to breaches, along with
+    decreased blast radius of security incidents, are outcome-based metrics that directly
+    demonstrate the value of Zero Trust investment to board members.
+
+    '
+- question_id: CCZT-MINI-004
+  category: domain_4
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In Zero Trust planning, a gap analysis compares which two states?
+
+    '
+  options:
+    A: The current security posture and the desired target Zero Trust architecture
+    B: The current budget and the projected budget
+    C: The organization's compliance status and industry best practices only
+    D: The number of deployed tools and the number of tools recommended by vendors
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Current security posture
+  - Desired target Zero Trust architecture
+  explanation: 'A gap analysis compares the current security posture against the desired
+    target Zero Trust architecture to identify deficiencies that need to be addressed
+    through the implementation roadmap.
+
+    '
+- question_id: CCZT-MINI-005
+  category: domain_5
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'How should an organization handle legacy systems that cannot be
+    directly integrated into a Zero Trust architecture during implementation?
+
+    '
+  options:
+    A: Exempt them from all security controls permanently
+    B: Ignore them until budget is available for full replacement
+    C: Grant them unrestricted network access to avoid disruption
+    D: Apply compensating controls such as enhanced monitoring, network segmentation,
+      and restricted access while planning for modernization or replacement
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Compensating controls
+  - Enhanced monitoring and segmentation
+  - Planning for modernization
+  explanation: 'Legacy systems should have compensating controls applied including
+    enhanced monitoring, network segmentation, and restricted access, while planning
+    for their eventual modernization or replacement.
+
+    '
+- question_id: CCZT-MINI-006
+  category: domain_1
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'What is the primary difference between the protect surface and the
+    attack surface in Zero Trust methodology?
+
+    '
+  options:
+    A: The protect surface focuses on critical assets that need protection and is
+      smaller than the attack surface
+    B: The protect surface is always larger than the attack surface
+    C: The attack surface is fixed while the protect surface constantly changes
+    D: The protect surface includes only network perimeters while the attack surface
+      includes endpoints
+  correct_answer: A
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Protect surface is smaller and focused
+  - Critical assets requiring protection
+  explanation: 'The protect surface focuses on the most critical assets (DAAS elements)
+    that need protection and is deliberately smaller and more manageable than the
+    ever-expanding attack surface, making it a more practical foundation for security
+    controls.
+
+    '
+- question_id: CCZT-MINI-007
+  category: domain_2
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'In an SDP deployment, what does a drop-all firewall do?
+
+    '
+  options:
+    A: Drops all packets that exceed a configured bandwidth threshold
+    B: Terminates all connections after a timeout period
+    C: Filters packets based on deep packet inspection rules
+    D: Blocks all inbound connection attempts by default until explicitly authorized
+  correct_answer: D
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Default deny all inbound connections
+  - Explicit authorization required
+  explanation: 'A drop-all firewall blocks all inbound connection attempts by default
+    until explicitly authorized, making protected services invisible to unauthorized
+    users and preventing reconnaissance attacks.
+
+    '
+- question_id: CCZT-MINI-008
+  category: domain_2
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'What is the term for the SDP capability that makes infrastructure
+    invisible to unauthorized users by not responding to any connection attempts?
+
+    '
+  options:
+    A: Stealth mode
+    B: Cloaking
+    C: Network masking
+    D: Dark networking
+  correct_answer: B
+  scoring_rubric:
+    3: Selects correct and explains reasoning thoroughly
+    2: Selects correct with basic reasoning
+    1: Selects partially correct answer with some relevant reasoning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Cloaking capability
+  - Infrastructure invisibility to unauthorized users
+  explanation: 'Cloaking is the SDP capability that makes infrastructure invisible
+    to unauthorized users by not responding to any connection attempts, effectively
+    hiding services from port scanning and reconnaissance.
+
+    '

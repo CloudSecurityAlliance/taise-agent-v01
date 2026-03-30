@@ -220,6 +220,7 @@ async def run_exam_stage(
     skip_judge: bool = False,
     verbose: bool = True,
     progress_tracker=None,
+    exam_id: str = "",
 ) -> dict:
     """Run the knowledge examination stage.
 
@@ -231,6 +232,17 @@ async def run_exam_stage(
     from evaluation.exam_evaluator import evaluate_exam
 
     exam_dir = str(PROJECT_ROOT / "exam")
+
+    # Resolve consolidated exam file from registry if exam_id is provided
+    exam_file = ""
+    if exam_id:
+        try:
+            from pod_integration.registry import get_exam_questions_path
+            candidate = get_exam_questions_path(exam_id)
+            if candidate.exists():
+                exam_file = str(candidate)
+        except Exception:
+            pass  # Fall back to legacy exam_dir
     raw_results = None
     evaluated_results = None
 
@@ -251,6 +263,7 @@ async def run_exam_stage(
             curriculum_record=curriculum_record,
             config=config,
             progress_callback=exam_progress_cb,
+            exam_file=exam_file,
         )
 
         if verbose:
@@ -281,6 +294,7 @@ async def run_exam_stage(
             config=config,
             skip_judge=skip_judge,
             progress_callback=print_progress if verbose else None,
+            exam_file=exam_file,
         )
     except Exception as e:
         print(f"  [ERROR] Exam evaluation failed: {e}")
@@ -323,6 +337,7 @@ async def run_pipeline(
     verbose: bool = True,
     assessment_path: str = "full_certification",
     progress_tracker=None,
+    exam_id: str = "",
 ) -> dict:
     """Run the TAISE-Agent v0.5 certification pipeline.
 
@@ -334,6 +349,7 @@ async def run_pipeline(
         verbose: Print progress
         assessment_path: One of "full_certification", "education_exam", "adversarial_only"
         progress_tracker: Optional callback(phase, current, total) for live progress updates
+        exam_id: Optional exam ID to use (loads from registry; empty = default/legacy)
 
     Returns:
         Dict with all artifacts and the run directory path.
@@ -412,9 +428,20 @@ async def run_pipeline(
                 "curriculum_version": "0.5",
             }
 
+        # Resolve exam_id: explicit param > agent profile > default from registry
+        effective_exam_id = exam_id or agent_profile.get("exam_id", "")
+        if not effective_exam_id:
+            try:
+                from pod_integration.registry import get_default_exam
+                default_exam = get_default_exam()
+                if default_exam:
+                    effective_exam_id = default_exam["exam_id"]
+            except Exception:
+                pass
         exam_results = await run_exam_stage(
             agent_profile, curriculum_record, config, run_dir, skip_judge, verbose,
             progress_tracker=progress_tracker,
+            exam_id=effective_exam_id,
         )
         step += 1
 
@@ -599,6 +626,24 @@ async def run_pipeline(
     if verbose:
         print(f"Step {step}/{total_steps}: Generating certification report...")
 
+    # Resolve exam/suite names for report
+    exam_name_for_report = ""
+    suite_name_for_report = ""
+    try:
+        from pod_integration.registry import get_exam_by_id, get_active_suite
+        eid = exam_id or agent_profile.get("exam_id", "")
+        if eid:
+            exam_entry = get_exam_by_id(eid)
+            if exam_entry:
+                exam_name_for_report = exam_entry.get("exam_name", eid)
+        elif exam_results:
+            exam_name_for_report = exam_results.get("exam_name", "")
+        active = get_active_suite()
+        if active:
+            suite_name_for_report = active.get("suite_name", "")
+    except Exception:
+        pass
+
     # Build report context
     report_md = generate_report(
         agent_profile=agent_profile,
@@ -608,6 +653,8 @@ async def run_pipeline(
         config=config,
         curriculum_record=curriculum_record,
         exam_results=exam_results,
+        exam_name=exam_name_for_report,
+        suite_name=suite_name_for_report,
     )
     report_path = save_report(report_md, run_dir)
 

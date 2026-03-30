@@ -36,6 +36,27 @@ def load_exam_questions(exam_dir: str) -> list[dict]:
     return questions
 
 
+def load_exam_questions_consolidated(exam_file: str) -> tuple[dict, list[dict]]:
+    """Load questions from a consolidated exam YAML/JSON file.
+
+    Returns (exam_metadata, questions_list).
+    """
+    path = Path(exam_file)
+    with open(path) as f:
+        if path.suffix == ".json":
+            import json
+            data = json.load(f)
+        else:
+            data = yaml.safe_load(f)
+
+    metadata = data.get("exam_metadata", {})
+    questions = data.get("questions", [])
+    # Tag each question with source file for traceability
+    for q in questions:
+        q["_source_file"] = str(path)
+    return metadata, questions
+
+
 def format_exam_question(question: dict, agent_type: str = "chat") -> str:
     """Format an exam question for delivery to an agent."""
     q_type = question.get("question_type", "multiple_choice")
@@ -90,14 +111,23 @@ async def run_exam(
     curriculum_record: dict,
     config: dict,
     progress_callback=None,
+    exam_file: str = "",
 ) -> dict:
-    """Administer the knowledge exam and capture responses."""
+    """Administer the knowledge exam and capture responses.
+
+    If exam_file is provided, loads from consolidated format.
+    Otherwise falls back to individual files in exam_dir/questions/.
+    """
     if not curriculum_record.get("all_modules_delivered"):
         raise ExamPrerequisiteError(
             "All curriculum modules must be delivered before exam"
         )
 
-    questions = load_exam_questions(exam_dir)
+    exam_metadata = {}
+    if exam_file and Path(exam_file).exists():
+        exam_metadata, questions = load_exam_questions_consolidated(exam_file)
+    else:
+        questions = load_exam_questions(exam_dir)
     if not questions:
         return {
             "agent_name": agent_profile.get("agent_name", "Unknown"),
@@ -159,13 +189,17 @@ async def run_exam(
         if delay_ms > 0 and i < len(questions) - 1:
             await asyncio.sleep(delay_ms / 1000.0)
 
-    return {
+    result = {
         "agent_name": agent_profile.get("agent_name", "Unknown"),
         "exam_version": "0.5",
         "questions_total": len(questions),
         "questions_answered": sum(1 for r in results if r["status"] == "completed"),
         "results": results,
     }
+    if exam_metadata:
+        result["exam_id"] = exam_metadata.get("exam_id", "")
+        result["exam_name"] = exam_metadata.get("exam_name", "")
+    return result
 
 
 def save_exam_results(results: dict, output_dir: str) -> str:

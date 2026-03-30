@@ -656,14 +656,14 @@
             <div class="assess-card" onclick="selectPath('education_exam')" id="path-education_exam">
                 <div class="card-icon">&#x1F393;</div>
                 <h3>Education &amp; Exam Only</h3>
-                <div class="card-desc">Study the TAISE-Agent safety curriculum and take the 30-question knowledge examination.</div>
+                <div class="card-desc">Study the TAISE-Agent safety curriculum and take the knowledge examination.</div>
                 <div class="card-detail">Ideal for agents in development. Demonstrates policy understanding.</div>
                 <span class="assess-badge level1">Level 1 Eligible</span>
             </div>
             <div class="assess-card" onclick="selectPath('adversarial_only')" id="path-adversarial_only">
                 <div class="card-icon">&#x1F3AF;</div>
                 <h3>Adversarial Testing Only</h3>
-                <div class="card-desc">Run 48 adversarial scenarios testing behavioral compliance across 7 safety domains.</div>
+                <div class="card-desc">Run adversarial scenarios testing behavioral compliance across safety domains.</div>
                 <div class="card-detail">Same as v0.4 behavioral testing. No curriculum or exam.</div>
                 <span class="assess-badge behavioral">Behavioral Only</span>
             </div>
@@ -751,7 +751,7 @@
     <!-- Safety Domains -->
     <div class="section">
         <h2>Safety Domains</h2>
-        <p>v0.5 tests agents across <strong>7 behavioral domains</strong> with 48 adversarial scenarios, using a dual evaluation engine: deterministic rule-based pattern matching plus an AI judge for semantic assessment.</p>
+        <p>v0.5 tests agents across <strong>multiple behavioral domains</strong> with adversarial scenarios, using a dual evaluation engine: deterministic rule-based pattern matching plus an AI judge for semantic assessment.</p>
 
         <div class="categories">
             <div class="cat-card">
@@ -1101,6 +1101,16 @@ by the Cloud Security Alliance. Follow these steps:</span>
                     <textarea id="description" rows="2" placeholder="Brief description of what your agent does"></textarea>
                 </div>
 
+                <div class="form-row" id="exam-selection-row">
+                    <label>Certification Exam *</label>
+                    <select id="exam_id">
+                        <option value="">Loading exams...</option>
+                    </select>
+                    <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.3rem;">
+                        Select which knowledge exam the agent will take alongside behavioral testing
+                    </div>
+                </div>
+
                 <button type="submit" class="btn-submit" id="submit-btn">Submit for Certification</button>
             </form>
 
@@ -1146,12 +1156,14 @@ curl <span class="string" id="report-url">http://localhost:8080/agent-cert/repor
         <div class="card">
             <ul class="whats-new-list">
                 <li>6-module safety curriculum covering all TAISE-Agent safety domains</li>
-                <li>30-question knowledge examination with per-domain scoring</li>
-                <li>48 adversarial scenarios (up from 24 in v0.4)</li>
+                <li>Knowledge examination with per-domain scoring</li>
+                <li>Expanded adversarial scenario library with admin-managed test suites</li>
                 <li>Multi-turn attack scenarios testing sustained adversarial pressure</li>
                 <li>Knowledge-behavior diagnostic matrix for holistic assessment</li>
                 <li>4 certification levels from Knowledge Certified to Continuous Assurance</li>
                 <li>Composite scoring combining exam, behavioral, and boundary results</li>
+                <li>Multiple certification exams: test agents against domain-specific knowledge exams including CSA's CCSK, CCAK, and other programs</li>
+                <li>Admin console for managing exam question banks and adversarial test suites</li>
             </ul>
         </div>
     </div>
@@ -1213,11 +1225,14 @@ curl <span class="string" id="report-url">http://localhost:8080/agent-cert/repor
         const openclawFields = document.getElementById('openclaw-fields');
         const iapSection = document.getElementById('iap-section');
 
+        const examRow = document.getElementById('exam-selection-row');
         if (path === 'adversarial_only') {
-            // Hide curriculum fields for adversarial only
+            // Hide curriculum and exam fields for adversarial only
             curriculumFields.style.display = 'none';
+            if (examRow) examRow.style.display = 'none';
         } else {
             curriculumFields.style.display = 'block';
+            if (examRow) examRow.style.display = 'block';
         }
 
         if (path === 'education_exam') {
@@ -1347,6 +1362,8 @@ curl <span class="string" id="report-url">http://localhost:8080/agent-cert/repor
         if (assessmentPath !== 'adversarial_only') {
             payload.curriculum_delivery = document.getElementById('curriculum_delivery').value;
             payload.multi_turn_capable = document.getElementById('multi_turn_capable').checked;
+            const examId = document.getElementById('exam_id').value;
+            if (examId) payload.exam_id = examId;
         }
 
         // Include IAP fields if set
@@ -1449,7 +1466,8 @@ curl <span class="string" id="report-url">http://localhost:8080/agent-cert/repor
                 // Update labels with live progress if available
                 if (data) {
                     if (stage.startsWith('Exam') && data.exam_progress !== undefined) {
-                        label = `Exam (${data.exam_progress}/30)`;
+                        const examTotal = data.exam_total || '?';
+                        label = `Exam (${data.exam_progress}/${examTotal})`;
                     }
                     if (stage.startsWith('Behavioral') && data.behavioral_progress !== undefined) {
                         label = `Behavioral Testing (${data.behavioral_progress})`;
@@ -1488,8 +1506,8 @@ curl <span class="string" id="report-url">http://localhost:8080/agent-cert/repor
                         currentPhase = stages.length - 1;
                     }
 
-                    const scenarioCount = assessmentPath === 'adversarial_only' ? '48 adversarial scenarios' :
-                                          assessmentPath === 'education_exam' ? '30-question exam' :
+                    const scenarioCount = assessmentPath === 'adversarial_only' ? 'adversarial scenarios' :
+                                          assessmentPath === 'education_exam' ? 'knowledge exam' :
                                           'curriculum + exam + adversarial testing';
 
                     resultBox.innerHTML = `
@@ -1569,6 +1587,29 @@ curl <span class="string" id="report-url">http://localhost:8080/agent-cert/repor
 
         setTimeout(poll, 2000);
     }
+
+    // ── Load available exams for dropdown ──
+    (async function loadExamOptions() {
+        try {
+            const res = await fetch('/agent-cert/exams');
+            const data = await res.json();
+            const select = document.getElementById('exam_id');
+            if (data.exams && data.exams.length > 0) {
+                select.innerHTML = '';
+                data.exams.forEach(e => {
+                    const opt = document.createElement('option');
+                    opt.value = e.exam_id;
+                    opt.textContent = e.exam_name + (e.question_count ? ' (' + e.question_count + ' questions)' : '');
+                    if (e.is_default) opt.selected = true;
+                    select.appendChild(opt);
+                });
+            } else {
+                select.innerHTML = '<option value="">No exams available</option>';
+            }
+        } catch (err) {
+            console.error('Failed to load exams:', err);
+        }
+    })();
 </script>
 
 </body>

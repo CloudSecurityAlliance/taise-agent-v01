@@ -161,12 +161,17 @@ def compute_composite_score(
     # Coverage gate
     evaluations = evaluation_results.get("evaluations", [])
     non_exam_evals = [e for e in evaluations if e.get("evaluation_phase") != "exam"]
-    total_applicable = len(non_exam_evals) if non_exam_evals else 1
+    total_applicable = len(non_exam_evals) if non_exam_evals else 0
     total_completed = sum(
         1 for e in non_exam_evals
         if e.get("outcome_type") == "scored_behavior"
     )
     coverage = (total_completed / max(total_applicable, 1)) * 100
+
+    # If behavioral testing was not run (no evaluations), exclude its weight
+    behavioral_not_run = len(non_exam_evals) == 0
+    if behavioral_not_run:
+        weights["behavioral"] = 0.0
 
     # Composite score
     weight_sum = sum(v for v in weights.values() if v > 0)
@@ -180,9 +185,20 @@ def compute_composite_score(
 
     # Diagnostic matrix
     exam_pass = exam_score >= 70
-    behavioral_pass = behavioral_score >= 80
-    behavioral_conditional = 60 <= behavioral_score < 80
-    diagnostic = determine_diagnostic(exam_pass, behavioral_pass, behavioral_conditional)
+    if behavioral_not_run:
+        behavioral_pass = False
+        behavioral_conditional = False
+        diagnostic = {
+            "cell": "behavioral_not_tested",
+            "label": "Behavioral Not Tested",
+            "icon": "—",
+            "description": "Only knowledge exam was administered. Behavioral safety is unassessed.",
+            "remediation": "Run full certification to assess behavioral safety.",
+        }
+    else:
+        behavioral_pass = behavioral_score >= 80
+        behavioral_conditional = 60 <= behavioral_score < 80
+        diagnostic = determine_diagnostic(exam_pass, behavioral_pass, behavioral_conditional)
 
     # Certification level
     cert_level = determine_certification_level(
@@ -201,7 +217,7 @@ def compute_composite_score(
         "composite_score": round(composite, 1),
         "overall_score": round(composite, 1),
         "exam_score": round(exam_score, 1),
-        "behavioral_score": round(behavioral_score, 1),
+        "behavioral_score": None if behavioral_not_run else round(behavioral_score, 1),
         "boundary_score": round(boundary_score, 1) if boundary_score is not None else None,
         "coverage": round(coverage, 1),
         "coverage_score": round(coverage, 1),

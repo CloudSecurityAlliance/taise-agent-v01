@@ -1,0 +1,293 @@
+exam_metadata:
+  exam_id: ccsk-v5-mini
+  exam_name: CCSK v5 Mini Exam (System Test)
+  version: '1.0'
+  description: 8-question mini exam for system testing. Sampled from the full 60-question
+    CCSK mock exam.
+  author: Cloud Security Alliance
+  created_date: '2026-03-27'
+  categories:
+  - id: domain_1
+    name: Cloud Computing Concepts & Architectures
+    weight: 9
+  - id: domain_2
+    name: Cloud Governance
+    weight: 9
+  - id: domain_3
+    name: Risk Audit & Compliance
+    weight: 9
+  - id: domain_4
+    name: Organization Management
+    weight: 9
+  - id: domain_5
+    name: Identity & Access Management
+    weight: 8
+  - id: domain_6
+    name: Security Monitoring
+    weight: 8
+  - id: domain_7
+    name: Infrastructure & Networking
+    weight: 8
+  - id: domain_8
+    name: Cloud Workload Security
+    weight: 8
+  - id: domain_9
+    name: Data Security
+    weight: 8
+  - id: domain_10
+    name: Application Security
+    weight: 8
+  - id: domain_11
+    name: Incident Response & Resilience
+    weight: 8
+  - id: domain_12
+    name: Related Technologies & Strategies
+    weight: 8
+questions:
+- question_id: CCSK-MINI-001
+  category: domain_1
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'Which characteristic of cloud computing as defined by ISO/IEC 22123-1:2023
+    allows resources to be provisioned and released with minimal management effort?
+
+    '
+  options:
+    A: Measured service
+    B: Broad network access
+    C: Rapid elasticity
+    D: On-demand self-service
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D (On-demand self-service) and explains that this characteristic enables
+      consumers to provision resources automatically without requiring human interaction
+      with the provider
+    2: Selects D with basic reasoning
+    1: Selects a partially correct answer such as C (Rapid elasticity) with some relevant
+      reasoning about provisioning
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - On-demand self-service as a core cloud characteristic
+  - Minimal management effort and automatic provisioning
+  - ISO/IEC 22123-1:2023 cloud computing definition
+  explanation: 'On-demand self-service is the cloud characteristic that allows consumers
+    to unilaterally provision computing capabilities, such as server time and network
+    storage, as needed automatically without requiring human interaction with the
+    service provider.
+
+    '
+- question_id: CCSK-MINI-002
+  category: domain_2
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'Which governance document sits at the TOP of the cloud governance
+    hierarchy and expresses management intent and direction?
+
+    '
+  options:
+    A: Policy
+    B: Procedure
+    C: Standard
+    D: Control baseline
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A (Policy) and explains the governance hierarchy with policy at the
+      top expressing management intent
+    2: Selects A with basic reasoning
+    1: Selects C (Standard) with some relevant reasoning about governance hierarchy
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Policy as the top-level governance document
+  - Expression of management intent and direction
+  - 'Governance hierarchy: policy, standards, procedures'
+  explanation: 'In the governance hierarchy, policies sit at the top and express management''s
+    intent and direction. Standards define specific requirements to implement policies,
+    and procedures provide step-by-step instructions for carrying out standards.
+
+    '
+- question_id: CCSK-MINI-003
+  category: domain_3
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'An auditor requests evidence that a SaaS provider''s controls meet
+    AICPA trust services criteria. Which report type is MOST appropriate?
+
+    '
+  options:
+    A: ISO 27001 certificate
+    B: CSA STAR Self-Assessment
+    C: PCI DSS Attestation of Compliance
+    D: SOC 2 Type II report
+  correct_answer: D
+  scoring_rubric:
+    3: Selects D (SOC 2 Type II) and explains that it evaluates controls against AICPA
+      trust services criteria over a period of time
+    2: Selects D with basic reasoning
+    1: Selects A (ISO 27001) with some relevant reasoning about third-party attestation
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - SOC 2 Type II report
+  - AICPA trust services criteria
+  - Controls effectiveness over a period of time
+  explanation: 'A SOC 2 Type II report is specifically designed to evaluate a service
+    organization''s controls against the AICPA trust services criteria (security,
+    availability, processing integrity, confidentiality, and privacy) over a defined
+    period, making it the most appropriate evidence for this request.
+
+    '
+- question_id: CCSK-MINI-004
+  category: domain_4
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'When managing a hybrid cloud environment, which approach BEST addresses
+    consistent security policy enforcement across on-premises and cloud workloads?
+
+    '
+  options:
+    A: Using a unified policy engine or cloud management platform that abstracts provider-specific
+      controls into a common policy set
+    B: Manually replicating firewall rules from on-premises to each cloud provider
+    C: Relying solely on the cloud provider's default security groups
+    D: Disabling all network policies and relying on application-layer security
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A and explains how a unified policy engine abstracts provider differences
+      to enforce consistent security policies
+    2: Selects A with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about hybrid
+      cloud management
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Unified policy engine or cloud management platform
+  - Abstraction of provider-specific controls
+  - Consistent policy enforcement across hybrid environments
+  explanation: 'A unified policy engine or cloud management platform abstracts provider-specific
+    controls into a common policy set, enabling consistent security policy enforcement
+    across both on-premises and cloud workloads regardless of the underlying infrastructure
+    differences.
+
+    '
+- question_id: CCSK-MINI-005
+  category: domain_5
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'An organization uses SAML 2.0 for single sign-on to its SaaS applications.
+    Which component does the SaaS application act as in this architecture?
+
+    '
+  options:
+    A: Identity Provider
+    B: Relying Party / Service Provider
+    C: Certificate Authority
+    D: SIEM collector
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B (Relying Party / Service Provider) and explains that the SaaS application
+      relies on the IdP's assertions for access decisions
+    2: Selects B with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about SAML
+      components
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Service Provider / Relying Party role
+  - SAML 2.0 architecture components
+  - SaaS application consuming IdP assertions
+  explanation: 'In a SAML 2.0 SSO architecture, the SaaS application acts as the Relying
+    Party or Service Provider (SP), which receives and validates SAML assertions from
+    the Identity Provider to grant users access without requiring separate credentials.
+
+    '
+- question_id: CCSK-MINI-006
+  category: domain_6
+  question_type: multiple_choice
+  difficulty: easy
+  question_text: 'What is Cloud Security Posture Management (CSPM) PRIMARILY designed
+    to do?
+
+    '
+  options:
+    A: Continuously assess cloud resource configurations against security policies
+      and compliance benchmarks to identify misconfigurations
+    B: Provide distributed denial-of-service protection
+    C: Manage software license compliance for SaaS applications
+    D: Encrypt data in transit between cloud regions
+  correct_answer: A
+  scoring_rubric:
+    3: Selects A and explains how CSPM continuously monitors cloud configurations
+      against security benchmarks
+    2: Selects A with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about cloud
+      security monitoring
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Cloud Security Posture Management definition
+  - Continuous configuration assessment
+  - Policy and compliance benchmark comparison
+  explanation: 'CSPM is designed to continuously assess cloud resource configurations
+    against security policies and compliance benchmarks, automatically identifying
+    misconfigurations, policy violations, and compliance gaps across cloud environments.
+
+    '
+- question_id: CCSK-MINI-007
+  category: domain_7
+  question_type: multiple_choice
+  difficulty: medium
+  question_text: 'In cloud networking, what is the PRIMARY advantage of Software-Defined
+    Networking (SDN)?
+
+    '
+  options:
+    A: It eliminates the need for IP addressing
+    B: It decouples the network control plane from the data plane, enabling programmable
+      and policy-driven network configuration
+    C: It guarantees zero-latency connections between regions
+    D: It removes the need for encryption in transit
+  correct_answer: B
+  scoring_rubric:
+    3: Selects B and explains control plane / data plane decoupling and programmable
+      network configuration
+    2: Selects B with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about SDN
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Control plane and data plane decoupling
+  - Programmable network configuration
+  - Policy-driven networking
+  explanation: 'SDN''s primary advantage is decoupling the network control plane from
+    the data plane, enabling programmable, policy-driven network configuration that
+    can be automated, scaled, and managed through software rather than manual hardware
+    configuration.
+
+    '
+- question_id: CCSK-MINI-008
+  category: domain_8
+  question_type: multiple_choice
+  difficulty: hard
+  question_text: 'What is a PRIMARY security consideration when running AI/ML training
+    workloads in the cloud?
+
+    '
+  options:
+    A: AI workloads do not require any special security controls
+    B: AI workloads should always run on public endpoints for performance
+    C: Protecting training data confidentiality, securing model artifacts, and controlling
+      access to GPU/accelerator resources to prevent data exfiltration or model theft
+    D: GPU instances are immune to side-channel attacks
+  correct_answer: C
+  scoring_rubric:
+    3: Selects C and explains the need to protect training data, model artifacts,
+      and GPU resources from exfiltration and theft
+    2: Selects C with basic reasoning
+    1: Selects a partially correct answer with some relevant reasoning about AI/ML
+      security
+    0: Selects incorrect answer without relevant justification
+  expected_answer_elements:
+  - Training data confidentiality protection
+  - Model artifact security
+  - GPU/accelerator resource access control
+  explanation: 'Running AI/ML training workloads in the cloud requires protecting
+    training data confidentiality, securing model artifacts against theft, and controlling
+    access to GPU/accelerator resources, as these represent valuable intellectual
+    property and sensitive data that must be safeguarded against exfiltration.
+
+    '
