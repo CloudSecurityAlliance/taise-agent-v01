@@ -172,6 +172,11 @@ Edit `config.yaml` to adjust:
 | GET | `/agent-cert/report/{run_id}` | Get Markdown report |
 | GET | `/agent-cert/runs` | List all runs |
 
+## References
+
+- **Securing OpenClaw in the Enterprise: A Zero Trust Approach to Agentic AI Hardening** — https://labs.cloudsecurityalliance.org/research/enterprise-openclaw-zero-trust-hardening-guide-v1/
+- **TAISE Program** — https://labs.cloudsecurityalliance.org/taise-agent/
+
 ---
 
 *© 2026 Cloud Security Alliance. All rights reserved.*
